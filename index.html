@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <style type="text/tailwindcss">
+        @theme {
+        --color-primary: #090D47;
+        --color-secondary: #FF6B6B;
+      }
+    </style>
+    <title>BATC</title>
+</head>
+
+<body>
+
+    <header class="bg-primary text-white">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <!-- Left: Toggle + Logo -->
+            <div class="flex items-center space-x-3">
+                <!-- Mobile toggle -->
+                <button id="menuToggle" class="md:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Logo -->
+                <img src="images/logo.png" alt="Logo" class="h-22 w-auto object-contain" />
+            </div>
+
+            <!-- Search Bar (desktop) -->
+            <div class="flex-1 mx-6 hidden md:flex">
+                <input type="text" placeholder="Search..." class="w-6/12 mx-auto max-w-sm px-4 py-2 rounded-full 
+               bg-gradient-to-r from-[#1a1d5c] to-[#0a0d47] 
+               text-white placeholder-gray-300 
+               focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            </div>
+
+            <!-- Navigation (desktop) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-red-500 font-medium">Home</a>
+                <a href="#" class="hover:text-red-400">Members</a>
+                <a href="#" class="hover:text-red-400">Be a Member</a>
+                <a href="#" class="hover:text-red-400">Events</a>
+                <a href="#" class="hover:text-red-400">Gallery</a>
+                <a href="#" class="hover:text-red-400">About Us</a>
+                <a href="#" class="hover:text-red-400">Contact Us</a>
+            </nav>
+
+            <!-- Login Button -->
+            <button class="ml-6 bg-white text-black font-medium px-5 py-2 rounded-lg hover:bg-gray-100">
+                Login
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="bg-primary w-64 h-full shadow-lg relative p-6">
+                <!-- Close Button -->
+                <button id="menuClose" class="absolute top-4 right-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Search Bar -->
+                <div class="my-4">
+                    <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full 
+                 bg-gradient-to-r from-[#1a1d5c] to-[#0a0d47] 
+                 text-white placeholder-gray-300 
+                 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-red-500 font-medium">Home</a>
+                    <a href="#" class="hover:text-red-400">Members</a>
+                    <a href="#" class="hover:text-red-400">Be a Member</a>
+                    <a href="#" class="hover:text-red-400">Events</a>
+                    <a href="#" class="hover:text-red-400">Gallery</a>
+                    <a href="#" class="hover:text-red-400">About Us</a>
+                    <a href="#" class="hover:text-red-400">Contact Us</a>
+                </nav>
+
+                <!-- Login Button -->
+                <button class="mt-6 bg-white text-primary font-medium px-5 py-2 rounded-lg hover:bg-blue-900 w-full">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <script>
+
+
+
+        // for navigation menu on mobile
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuClose = document.getElementById("menuClose");
+
+        // Open menu
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.remove("hidden");
+        });
+
+        // Close menu
+        menuClose.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+
+        // Click outside to close
+        mobileMenu.addEventListener("click", (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add("hidden");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
