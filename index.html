@@ -21,7 +21,7 @@
 
 <body>
     <!-- navigation bar  -->
-    <header class="bg-primary text-white">
+    <header class="bg-primary text-white ">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
             <!-- Left: Toggle + Logo -->
             <div class="flex items-center space-x-3">
@@ -104,11 +104,67 @@
     </header>
 
     <!-- top image (Header)  -->
-    <section class="max-w-7xl mx-auto my-6 px-6">
-        <div
-            class="background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('images/header-bg.png') lightgray 0px -61.776px / 100% 123.552% no-repeat;">
+    <section class=" ">
+        <div class=" mx-auto object-cover relative h-[500px] bg-cover bg-center"
+            style="background-image: url('images/header.jpeg');">
+
+
+            <!-- এখানে flex-col নয়, md:flex-row -->
+            <div
+                class="relative z-10 max-w-[1800px] mx-auto h-full flex flex-col md:flex-row justify-between px-6 md:px-0">
+
+                <!-- Left Side: Follow Us + Welcome -->
+                <div
+                    class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left mt-[200px] pb-12">
+                    <!-- Follow Us + Icons -->
+                    <div class="flex flex-col items-center space-y-4">
+                        <p class="transform -rotate-90 text-white tracking-widest hidden md:block mb-10">Follow Us</p>
+                        <p class="text-white md:hidden">Follow Us</p>
+                        <div class="flex md:flex-col gap-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white">F</a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-400 text-white">in</a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-500 text-white">Ig</a>
+                        </div>
+                    </div>
+
+                    <!-- Welcome Content -->
+                    <div class="text-white space-y-5">
+                        <p class="text-lg">Welcome to</p>
+                        <h1 class="text-4xl md:text-5xl font-bold">
+                            <span class="text-red-500">BATC</span>
+                        </h1>
+                        <p class="text-gray-200 text-sm md:text-base">Bangladeshi American Tech Coalition</p>
+                        <button
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full shadow hover:bg-gray-100">
+                            ▶ The Story of BATC
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side -->
+                <div
+                    class="flex flex-col items-center md:items-end space-y-5 md:space-y-6 text-center md:text-right mt-12 md:mt-0 pt-12 md:pt-16">
+                    <div class="px-6 py-2 bg-white/20 rounded-l-full text-white font-medium">
+                        Sun | Aug 3 | 10:00 AM
+                    </div>
+                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                        Join Meeting
+                    </button>
+                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                        Be a member
+                    </button>
+                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                        Upcoming Seminar
+                    </button>
+                </div>
+
+            </div>
         </div>
     </section>
+
 
     <!-- Goal of BATC -->
     <section class="bg-gray">
