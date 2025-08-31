@@ -36,7 +36,7 @@
                 </button>
 
                 <!-- Logo -->
-                <img src="images/logo.png" alt="Logo" class="h-22 w-auto object-contain" />
+                <img src="images/logo.png" alt="Logo" class="h-16 w-auto object-contain" />
             </div>
 
             <!-- Search Bar (desktop) -->
@@ -110,12 +110,11 @@
 
 
             <!-- এখানে flex-col নয়, md:flex-row -->
-            <div
-                class="relative z-10 max-w-[1800px] mx-auto h-full flex flex-col md:flex-row justify-between px-6 md:px-0">
+            <div class="relative z-10 max-w-[1800px] mx-auto h-full flex flex-col md:flex-row justify-between  md:px-0">
 
                 <!-- Left Side: Follow Us + Welcome -->
                 <div
-                    class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left mt-[200px] pb-12">
+                    class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 text-center md:text-left md:mt-[200px] md:pb-12">
                     <!-- Follow Us + Icons -->
                     <div class="flex flex-col items-center space-y-4">
                         <p class="transform -rotate-90 text-white tracking-widest hidden md:block mb-10">Follow Us</p>
@@ -146,17 +145,21 @@
 
                 <!-- Right Side -->
                 <div
-                    class="flex flex-col items-center md:items-end space-y-5 md:space-y-6 text-center md:text-right mt-12 md:mt-0 pt-12 md:pt-16">
-                    <div class="px-6 py-2 bg-white/20 rounded-l-full text-white font-medium">
+                    class="flex flex-row md:flex-col flex-wrap items-center md:items-end space-y-2  md:space-y-3 text-center md:text-right my-5 mx-4 md:my-0 md:mx-0 md:pt-8">
+                    <button
+                        class="md:w-48 w-5/12 mx-auto py-2 bg-white/20 rounded-full md:rounded-r-none text-white font-medium text-xs md:text-base">
                         Sun | Aug 3 | 10:00 AM
-                    </div>
-                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                    </button>
+                    <button
+                        class="md:w-48 w-5/12 mx-auto py-2 rounded-full md:rounded-r-none bg-red-400 hover:bg-red-500 font-medium text-white text-xs md:text-base">
                         Join Meeting
                     </button>
-                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                    <button
+                        class="md:w-48 w-5/12 mx-auto py-2 rounded-full md:rounded-r-none bg-red-400 hover:bg-red-500 font-medium text-white text-xs md:text-base">
                         Be a member
                     </button>
-                    <button class="w-48 py-3 rounded-l-full bg-red-400 hover:bg-red-500 font-medium text-white">
+                    <button
+                        class="md:w-48 w-5/12 mx-auto py-2 rounded-full md:rounded-r-none bg-red-400 hover:bg-red-500 font-medium text-white text-xs md:text-base">
                         Upcoming Seminar
                     </button>
                 </div>
