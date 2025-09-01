@@ -109,96 +109,175 @@
         </div>
     </header>
 
-    <!-- members details page content start   -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-12 gap-8 items-center">
+    <!-- add member  -->
+    <section class="max-w-7xl mx-auto bg-white rounded-lg shadow-md my-20">
 
-            <!-- Left Side (Text) -->
-            <div class="col-span-12 md:col-span-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">
-                    Mizanur Choudhury
-                </h2>
-                <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-4">
-                    Tech Executive-AVP & Head of Network @ Global Management Expertise in Non-Profits & Fortune 500.
-                </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Building Community, Empowering Growth – Our members come together to create a supportive network
-                    that
-                    fosters collaboration, celebrates Bangladeshi heritage, and drives both personal and professional
-                    development
-                    in the tech industry. We inspire innovation through shared knowledge and mentorship. We open doors
-                    to global
-                    opportunities while strengthening local impact. Together, we’re shaping the future of Bangladeshi
-                    talent in
-                    technology. Our platform connects experienced professionals with rising leaders to ensure continuous
-                    learning. We promote cultural pride while embracing modern skills and global perspectives. Through
-                    events,
-                    networking, and collective support, we empower every member to thrive and succeed.
-                </p>
+        <!-- Header with Image -->
+        <div class="relative">
+            <img src="images/member_header.jpg" alt="Member Header" class="w-full h-40 object-cover rounded-t-lg">
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
+                <h2 class="text-2xl font-bold">Be a proud member of this Tech Coalition</h2>
+                <p class="text-sm"></p>
             </div>
-
-            <!-- Right Side (Image) -->
-            <div class="col-span-12 md:col-span-4 flex justify-center md:justify-end">
-                <img src="images/guided-1.png" alt="Mizanur Choudhury"
-                    class="rounded-2xl shadow-lg object-cover md:w-80 md:h-80">
-            </div>
-
         </div>
-        <!-- members details   -->
-        <div class="mt-20">
+
+        <!-- Form Section -->
+        <form class="p-6 space-y-6">
+
             <!-- Title -->
-            <h2 class="text-2xl md:text-3xl font-bold mb-6">Member Details</h2>
+            <h3 class="text-center text-xl font-semibold">
+                Please enter your personal & contact Information
+            </h3>
+            <p class="text-center text-gray-500 text-sm">All fields marked with * are required.</p>
 
-            <!-- Details -->
-            <div class="space-y-4 text-gray-700">
-                <p><span class="font-semibold">Full Name:</span> Mizanur Choudhury</p>
-                <p><span class="font-semibold">Designation:</span> Tech Executive-AVP & Head of Network @ Global
-                    Management Expertise in Non-Profits & Fortune 500.</p>
-                <p><span class="font-semibold">Phone Number:</span> 929-301-6028</p>
-                <p><span class="font-semibold">Email Address:</span> info@gmail.com</p>
-                <p><span class="font-semibold">Registration/Trade License No.:</span> TRD-458921</p>
-                <p><span class="font-semibold">Industry / Sector:</span> Information Technology & Software Services</p>
-                <p><span class="font-semibold">Company Address:</span> New York, United States</p>
+            <!-- Line 1: 3 Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-medium">Full Name *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">You Known As</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">Current Job Title *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
             </div>
-        </div>
+
+            <!-- Line 2: 3 Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-medium">Email Address *</label>
+                    <input type="email" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">Password *</label>
+                    <input type="password" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="******">
+                </div>
+                <div>
+                    <label class="block font-medium">Phone Number *</label>
+                    <input type="tel" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+            </div>
+
+            <!-- Line 3: 3 Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-medium">Brith Date *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">Birth Month *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">Birth Year *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+            </div>
+
+            <!-- Line 4: Full Width -->
+            <div>
+                <label class="block font-medium">Home Address Line 1 *</label>
+                <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+            </div>
+
+            <!-- Line 5: Full Width -->
+            <div>
+                <label class="block font-medium">Home Address Line 2</label>
+                <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+            </div>
+
+            <!-- Line 6: 3 Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block font-medium">City *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">State *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+                <div>
+                    <label class="block font-medium">ZIP Code *</label>
+                    <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+                </div>
+            </div>
+
+            <!-- Line 7: Full Width -->
+            <div>
+                <label class="block font-medium">Emergency Contact Number *</label>
+                <input type="text" class="w-full border border-gray-400 rounded px-4 py-3" placeholder="Enter...">
+            </div>
+
+            <!-- Line 8: Full Width -->
+            <div>
+                <label class="block font-medium">Your IT Career Journey (Example: Skills, others)</label>
+                <textarea class="w-full border border-gray-400 rounded px-4 py-3" rows="3"
+                    placeholder="Tell us about yourself in details..."></textarea>
+            </div>
+
+            <!-- Line 9: 2 Upload Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium">Personal Image *</label>
+                    <input type="file" class="w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded file:border-0
+                file:text-sm file:font-semibold
+                file:bg-gray-100 file:text-gray-700
+                hover:file:bg-gray-200
+                focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-medium">Photo ID *</label>
+                    <input type="file" class="w-full text-sm text-gray-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded file:border-0
+                file:text-sm file:font-semibold
+                file:bg-gray-100 file:text-gray-700
+                hover:file:bg-gray-200
+                focus:outline-none">
+                </div>
+            </div>
+
+            <!-- Line 10: Sign -->
+            <div class="bg-gray p-12 rounded-lg">
+                <label class="block font-medium">Sign By Name *</label>
+                <input type="text" class="w-full border border-gray-400 bg-white rounded px-4 py-3" placeholder="Enter...">
+            </div>
+
+            <!-- Line 11: Terms -->
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="terms" class="h-4 w-4">
+                <label for="terms" class="text-sm">I agree to the <a href="#" class="text-blue-600 underline">Terms &
+                        Conditions *</a></label>
+            </div>
+
+            <!-- Line 12: Captcha -->
+            <div class="flex items-center gap-4">
+                <div class="bg-gray px-4 py-2 rounded">QwTY8dP</div>
+                <input type="text" class="flex-1 border border-gray-400 rounded px-4 py-3" placeholder="Enter Code">
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="w-full bg-primary text-white py-3 rounded font-semibold hover:bg-black">
+                Next
+            </button>
+
+            <!-- Login -->
+            <p class="text-center text-sm">Already a Member? <a href="#" class="font-semibold">Login</a></p>
+
+        </form>
+
+
 
     </section>
 
 
-
-    <!-- Want To Get In Touch start  -->
-
-    <section class="py-14 lg:my-20 bg-gray">
-        <div class="max-w-6xl max-md:p-4 md:p-4 h-auto mx-auto bg-white rounded-xl">
-            <div class="grid grid-cols-12 gap-5 lg:p-10 max-md:p-3 ">
-
-                <div class="lg:col-span-6 md:col-span-6 max-md:col-span-12 h-full flex">
-                    <div class=" ">
-                        <h1 class="lg:text-4xl max-md:text-2xl font-bold text-dark-gray leading-10 my-5">
-                            Connect with BATC Today
-                        </h1>
-                        <p class="text-sm font-light">Let’s Connect – We’d Love to Hear from You</p>
-
-                    </div>
-                </div>
-                <div
-                    class="lg:col-span-6 md:col-span-6 max-md:col-span-12 h-full  flex flex-col items-center justify-center space-y-5">
-                    <input class="border-0 bg-gray w-full px-5 py-3 rounded-lg outline-none " type="text" name=""
-                        placeholder="Name" id="">
-                    <input class="border-0 bg-gray w-full px-5 py-3 rounded-lg outline-none " type="text" name=""
-                        placeholder="Email" id="">
-                    <input class="border-0 bg-gray w-full h-20 px-5 py-3 rounded-lg  outline-none" type="text" name=""
-                        placeholder="Message" id="">
-                    <div class=" mt-2 w-full">
-                        <button
-                            class="w-full bg-primary hover:bg-secondary  text-white font-semibold hover:text-yellow py-2 px-6 rounded transition duration-300">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- footer  -->
     <footer class="bg-[#0A0F44] text-white py-10">
