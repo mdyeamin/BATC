@@ -111,31 +111,31 @@
 
     <!-- about us section   -->
     <section class=" bg-gray p-6">
-
         <div class="max-w-7xl mx-auto">
             <!-- President Message -->
             <div class=" bg-white shadow rounded-3xl p-6 my-20 relative">
-
-                <!-- Profile Image Left -->
-                <div class="flex absolute -top-20 left-36 transform -translate-x-1/2">
+                <!-- Profile Image -->
+                <div
+                    class="flex md:absolute md:-top-20 md:left-36 md:transform md:-translate-x-1/2 justify-center -mt-24 md:mt-0">
                     <img src="images/about-profile.jpg" alt="President"
-                        class="w-40 h-40 rounded-full border-4 border-white shadow-md object-cover">
+                        class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-md object-cover">
                 </div>
 
-                <!-- Title Center -->
-                <h3 class="text-center text-4xl font-bold my-20">
+                <!-- Title -->
+                <h3 class="text-center text-3xl md:text-4xl font-bold my-10 md:my-20">
                     A message from <span class="text-secondary">The President of BATC</span>
                 </h3>
 
-                <!-- Paragraphs Left Align -->
-                <p class="mt-10 text-gray-600 font-semibold text-lg leading-relaxed">
+                <!-- Paragraphs -->
+                <p
+                    class="mt-6 text-gray-600 font-semibold text-base md:text-lg leading-relaxed text-justify md:text-left">
                     It is a great honor for me to serve as the President of the Bangladesh-American Tech Community
                     (BATC).
                     Our vision is simple yet powerful: to connect innovation, culture, and community by bringing
-                    together
-                    talented professionals of Bangladeshi origin who are shaping the global tech landscape.
+                    together talented professionals of Bangladeshi origin who are shaping the global tech landscape.
                 </p>
-                <p class="mt-4 mb-20 text-gray-600 font-semibold text-lg leading-relaxed">
+                <p
+                    class="mt-4 mb-10 md:mb-20 text-gray-600 font-semibold text-base md:text-lg leading-relaxed text-justify md:text-left">
                     Through BATC, we aim to create a platform where ideas are shared, collaborations are built,
                     and opportunities are unlocked. Whether it is fostering career growth, celebrating our heritage,
                     or building meaningful networks, BATC stands as a bridge between our culture and the future of
@@ -143,89 +143,73 @@
                 </p>
 
                 <!-- Signature & Button -->
-                <div class="grid grid-cols-2 items-center mt-6 gap-6">
-                    <!-- Signature Shape -->
-                    <div class="relative inline-block">
+                <div class="grid grid-cols-1 md:grid-cols-2 items-center mt-6 gap-6">
+                    <!-- Signature -->
+                    <div class="relative inline-block text-center md:text-left">
                         <div class="bg-primary text-white py-3 pl-4 pr-12 inline-block relative">
-                            <span class="text-xl">— Mizanur Choudhury</span><br>
-                            <span class="text-sm">President, BATC</span>
-                            <!-- Triangle Right -->
+                            <span class="text-lg md:text-xl">— Mizanur Choudhury</span><br>
+                            <span class="text-xs md:text-sm">President, BATC</span>
+                            <!-- Triangle only on md+ -->
                             <div
-                                class="absolute top-0 right-[-80px] w-0 h-0 border-t-[76px]  border-t-transparent border-l-[80px] border-l-primary border-b-[0px] border-b-transparent">
+                                class="hidden md:block absolute top-0 right-[-80px] w-0 h-0 border-t-[76px] border-t-transparent border-l-[80px] border-l-primary border-b-[0px] border-b-transparent">
                             </div>
                         </div>
                     </div>
 
                     <!-- Button -->
                     <div class="flex items-center justify-center">
-                        <button class="bg-primary text-white px-5 py-2 rounded font-medium hover:bg-secondary transition">
+                        <button
+                            class="bg-primary text-white px-5 py-2 rounded font-medium hover:bg-secondary transition">
                             Read More
                         </button>
                     </div>
                 </div>
-
             </div>
 
             <!-- Vision -->
             <div class="grid md:grid-cols-12 gap-8 items-center">
                 <!-- Text -->
-                <div class="md:col-span-7">
-                    <h3 class="text-2xl font-bold">Our <span class="text-red-600">Vision</span></h3>
-                    <p class="mt-4 text-gray-600 leading-relaxed">
-                        To become the most trusted learning destination in Bangladesh—and eventually, South Asia—
-                        helping people move forward with career-focused education, training, and knowledge sharing.
-                        We want to be a bridge that helps students, job seekers, and professionals step confidently
-                        into the future by empowering them with practical skills, industry insights, and real-world
-                        opportunities.
+                <div class="md:col-span-7 order-2 md:order-1">
+                    <h3 class="text-3xl md:text-4xl font-bold text-center">Our <span
+                            class="text-secondary">Vision</span></h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed font-semibold text-base text-justify md:text-left">
+                        To become the most trusted learning platform in Bangladesh — and eventually, South Asia — helping people move from education to execution, learning to earning. We want to see a future where thousands of students from villages, towns, and cities alike are building careers they love — freelancing, working at top companies, or launching their own ventures.
                     </p>
-                    <p class="mt-4 text-gray-600 leading-relaxed">
-                        BATC’s vision is fueled by a strong belief in lifelong learning. As industries evolve, we adapt
-                        and
-                        deliver
-                        new knowledge that keeps our learners “ever-ready”—always up to tomorrow’s challenges, but also
-                        able
-                        to seize today’s best opportunities. Learning is not temporary, it’s continuous.
+                    <p class="mt-4 text-gray-600 leading-relaxed font-semibold text-base text-justify md:text-left">
+                       We want to see a future where thousands of students from villages, towns, and cities alike are building careers they love — freelancing, working at top companies, or launching their own ventures.
                     </p>
                 </div>
                 <!-- Image -->
-                <div class="md:col-span-5">
-                    <img src="images/vision.jpg" alt="Vision" class="rounded-lg shadow-md w-full">
+                <div class="md:col-span-5 order-1 md:order-2">
+                    <img src="images/vision.jpg" alt="Vision"
+                        class="rounded-lg shadow-md w-full h-64 md:h-96 object-cover">
                 </div>
             </div>
 
             <!-- Mission -->
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-4">Our <span class="text-red-600">Mission</span></h3>
-
-                <!-- Top Image -->
-                <img src="images/mission-1.jpg" alt="Mission" class="rounded-lg shadow-md w-full mb-6">
+            <div class="mt-20">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-center">Our <span
+                        class="text-secondary">Mission</span></h3>
+                <p
+                    class="text-gray-600 leading-relaxed mb-5 text-base font-semibold text-justify md:text-left">
+                   To empower a generation of learners with practical, affordable, and transformative education — built for Bangladesh, ready for the world. At Enthrall IT, our mission is rooted in a simple but bold idea: Education should change lives — not just look good on paper. We’re here to break the traditional learning model.
+                </p>
+                <p
+                    class="text-gray-600 leading-relaxed mb-01 md:mb-20 text-base font-semibold text-justify md:text-left">
+                   No more overpriced courses, outdated theories, or one-size-fits-all solutions. Instead, we focus on hands-on, real-world skills that open doors — to jobs, freelancing, entrepreneurship, and global opportunities. Our goal is to support the underdogs — the student from a small town, the job-seeker with a dream, the curious soul who just wants a better life. We don’t care where you start. We care where you’re going.
+                </p>
 
                 <!-- Bottom 2 Images -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <img src="images/mission-1.jpg" alt="Mission 1" class="rounded-lg shadow-md w-full">
-                    <img src="images/mission-2.jpg" alt="Mission 2" class="rounded-lg shadow-md w-full">
+                    <img src="images/mission-1.jpg" alt="Mission 1"
+                        class="rounded-lg shadow-md w-full h-64 md:h-96 object-cover">
+                    <img src="images/mission-2.jpg" alt="Mission 2"
+                        class="rounded-lg shadow-md w-full h-64 md:h-96 object-cover">
                 </div>
-
-                <!-- Mission Text -->
-                <p class="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                    To empower a generation of learners with practical, affordable, and transformative education—built
-                    for
-                    Bangladesh,
-                    ready for the world. At Enthrall, our mission is rooted in two principles: Education should be
-                    accessible and
-                    education should be impactful.
-                    <br><br>
-                    Whether you’re a student looking for guidance, a job seeker in need of training, or a professional
-                    aiming to upskill,
-                    Enthrall is here to help you reach your goals. We are focused on hands-on learning—projects, labs,
-                    mentoring,
-                    and career preparation—because real education goes beyond textbooks. We aspire to transform each
-                    student, from skill
-                    gaps into skill strengths, from uncertainty into job market value, and from hope into reality.
-                </p>
             </div>
         </div>
     </section>
+
 
 
 
