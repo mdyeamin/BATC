@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/25d8830708.js" crossorigin="anonymous"></script>
+    <!-- swiper js  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style type="text/tailwindcss">
+        @theme {
+        --color-primary: #090D47;
+        --color-secondary: #FF6B6B;
+        --color-gray: #EDF1F3;
+      }
+    </style>
+    <title>BATC</title>
+
+</head>
+
+<body>
+    <!-- navigation bar  -->
+    <header class="bg-primary text-white ">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <!-- Left: Toggle + Logo -->
+            <div class="flex items-center space-x-3">
+                <!-- Mobile toggle -->
+                <button id="menuToggle" class="md:hidden focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Logo -->
+                <img src="images/logo.png" alt="Logo" class="h-16 w-auto object-contain" />
+            </div>
+
+            <!-- Search Bar (desktop) -->
+            <div class="flex-1 mx-6 hidden md:flex">
+                <input type="text" placeholder="Search..." class="w-6/12 mx-auto max-w-sm px-4 py-2 rounded-full 
+               bg-gradient-to-r from-[#1a1d5c] to-[#0a0d47] 
+               text-white placeholder-gray-300 
+               focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            </div>
+
+            <!-- Navigation (desktop) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-red-500 font-medium">Home</a>
+                <a href="members.html" class="hover:text-red-400">Members</a>
+                <a href="be_a_member.html" class="hover:text-red-400">Be a Member</a>
+                <a href="events.html" class="hover:text-red-400">Events</a>
+                <a href="gallery.html" class="hover:text-red-400">Gallery</a>
+                <a href="about_us.html" class="hover:text-red-400">About Us</a>
+                <a href="contact_us.html" class="hover:text-red-400">Contact Us</a>
+            </nav>
+
+            <!-- Login Button -->
+            <button class="ml-6 bg-white text-black font-medium px-5 py-2 rounded-lg hover:bg-gray-100">
+                Login
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="fixed inset-0 backdrop-blur-[3px] bg-opacity-50 hidden z-50">
+            <div class="bg-primary w-64 h-full shadow-lg relative p-6">
+                <!-- Close Button -->
+                <button id="menuClose" class="absolute top-4 right-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Search Bar -->
+                <div class="my-4">
+                    <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-full 
+                 bg-gradient-to-r from-[#1a1d5c] to-[#0a0d47] 
+                 text-white placeholder-gray-300 
+                 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-red-500 font-medium">Home</a>
+                    <a href="members.html" class="hover:text-red-400">Members</a>
+                    <a href="be_a_member.html" class="hover:text-red-400">Be a Member</a>
+                    <a href="events.html" class="hover:text-red-400">Events</a>
+                    <a href="gallery.html" class="hover:text-red-400">Gallery</a>
+                    <a href="about_us.html" class="hover:text-red-400">About Us</a>
+                    <a href="contact_us.html" class="hover:text-red-400">Contact Us</a>
+                </nav>
+
+                <!-- Login Button -->
+                <button class="mt-6 bg-white text-primary font-medium px-5 py-2 rounded-lg hover:bg-blue-900 w-full">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- about us section   -->
+    <section class=" bg-gray p-6">
+
+        <div class="max-w-7xl mx-auto">
+            <!-- President Message -->
+            <div class=" bg-white shadow rounded-3xl p-6 my-20 relative">
+
+                <!-- Profile Image Left -->
+                <div class="flex absolute -top-20 left-36 transform -translate-x-1/2">
+                    <img src="images/about-profile.jpg" alt="President"
+                        class="w-40 h-40 rounded-full border-4 border-white shadow-md object-cover">
+                </div>
+
+                <!-- Title Center -->
+                <h3 class="text-center text-4xl font-bold my-20">
+                    A message from <span class="text-secondary">The President of BATC</span>
+                </h3>
+
+                <!-- Paragraphs Left Align -->
+                <p class="mt-10 text-gray-600 font-semibold text-lg leading-relaxed">
+                    It is a great honor for me to serve as the President of the Bangladesh-American Tech Community
+                    (BATC).
+                    Our vision is simple yet powerful: to connect innovation, culture, and community by bringing
+                    together
+                    talented professionals of Bangladeshi origin who are shaping the global tech landscape.
+                </p>
+                <p class="mt-4 mb-20 text-gray-600 font-semibold text-lg leading-relaxed">
+                    Through BATC, we aim to create a platform where ideas are shared, collaborations are built,
+                    and opportunities are unlocked. Whether it is fostering career growth, celebrating our heritage,
+                    or building meaningful networks, BATC stands as a bridge between our culture and the future of
+                    technology.
+                </p>
+
+                <!-- Signature & Button -->
+                <div class="grid grid-cols-2 items-center mt-6 gap-6">
+                    <!-- Signature Shape -->
+                    <div class="relative inline-block">
+                        <div class="bg-primary text-white py-3 pl-4 pr-12 inline-block relative">
+                            <span class="text-xl">— Mizanur Choudhury</span><br>
+                            <span class="text-sm">President, BATC</span>
+                            <!-- Triangle Right -->
+                            <div
+                                class="absolute top-0 right-[-80px] w-0 h-0 border-t-[76px]  border-t-transparent border-l-[80px] border-l-primary border-b-[0px] border-b-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="flex items-center justify-center">
+                        <button class="bg-primary text-white px-5 py-2 rounded font-medium hover:bg-secondary transition">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Vision -->
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <!-- Text -->
+                <div class="md:col-span-7">
+                    <h3 class="text-2xl font-bold">Our <span class="text-red-600">Vision</span></h3>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        To become the most trusted learning destination in Bangladesh—and eventually, South Asia—
+                        helping people move forward with career-focused education, training, and knowledge sharing.
+                        We want to be a bridge that helps students, job seekers, and professionals step confidently
+                        into the future by empowering them with practical skills, industry insights, and real-world
+                        opportunities.
+                    </p>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        BATC’s vision is fueled by a strong belief in lifelong learning. As industries evolve, we adapt
+                        and
+                        deliver
+                        new knowledge that keeps our learners “ever-ready”—always up to tomorrow’s challenges, but also
+                        able
+                        to seize today’s best opportunities. Learning is not temporary, it’s continuous.
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="md:col-span-5">
+                    <img src="images/vision.jpg" alt="Vision" class="rounded-lg shadow-md w-full">
+                </div>
+            </div>
+
+            <!-- Mission -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Our <span class="text-red-600">Mission</span></h3>
+
+                <!-- Top Image -->
+                <img src="images/mission-1.jpg" alt="Mission" class="rounded-lg shadow-md w-full mb-6">
+
+                <!-- Bottom 2 Images -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <img src="images/mission-1.jpg" alt="Mission 1" class="rounded-lg shadow-md w-full">
+                    <img src="images/mission-2.jpg" alt="Mission 2" class="rounded-lg shadow-md w-full">
+                </div>
+
+                <!-- Mission Text -->
+                <p class="text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                    To empower a generation of learners with practical, affordable, and transformative education—built
+                    for
+                    Bangladesh,
+                    ready for the world. At Enthrall, our mission is rooted in two principles: Education should be
+                    accessible and
+                    education should be impactful.
+                    <br><br>
+                    Whether you’re a student looking for guidance, a job seeker in need of training, or a professional
+                    aiming to upskill,
+                    Enthrall is here to help you reach your goals. We are focused on hands-on learning—projects, labs,
+                    mentoring,
+                    and career preparation—because real education goes beyond textbooks. We aspire to transform each
+                    student, from skill
+                    gaps into skill strengths, from uncertainty into job market value, and from hope into reality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Want To Get In Touch start  -->
+
+    <section class="py-14 lg:my-20 bg-gray">
+        <div class="max-w-7xl max-md:p-6 md:p-4 h-auto mx-auto bg-white rounded-xl">
+            <div class="grid grid-cols-12 gap-5 lg:p-10 max-md:p-3 ">
+
+                <div class="lg:col-span-6 md:col-span-6 max-md:col-span-12 h-full flex">
+                    <div class=" ">
+                        <h1 class="lg:text-4xl max-md:text-2xl font-bold text-dark-gray leading-10 my-5">
+                            Connect with BATC Today
+                        </h1>
+                        <p class="text-sm font-light">Let’s Connect – We’d Love to Hear from You</p>
+
+                    </div>
+                </div>
+                <div
+                    class="lg:col-span-6 md:col-span-6 max-md:col-span-12 h-full  flex flex-col items-center justify-center space-y-5">
+                    <input class="border-0 bg-gray w-full px-5 py-3 rounded-lg outline-none " type="text" name=""
+                        placeholder="Name" id="">
+                    <input class="border-0 bg-gray w-full px-5 py-3 rounded-lg outline-none " type="text" name=""
+                        placeholder="Email" id="">
+                    <input class="border-0 bg-gray w-full h-20 px-5 py-3 rounded-lg  outline-none" type="text" name=""
+                        placeholder="Message" id="">
+                    <div class=" mt-2 w-full">
+                        <button
+                            class="w-full bg-primary hover:bg-secondary  text-white font-semibold hover:text-yellow py-2 px-6 rounded transition duration-300">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="bg-[#0A0F44] text-white py-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Left Side -->
+            <div>
+                <!-- Logo -->
+                <img src="images/logo.png" alt="BATC Logo" class="h-14 mb-4">
+
+                <!-- Description -->
+                <p class="text-gray-300 mb-6">
+                    Connecting Innovation, Culture, and Community – Uniting Bangladeshi-American tech professionals to
+                    foster creativity, celebrate our heritage, and build meaningful connections that drive personal and
+                    professional growth.
+                </p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex flex-col md:items-end">
+                <h3 class="font-bold mb-3">Social Media</h3>
+                <div class="flex gap-3">
+                    <a href="#" class="border w-8 h-8 flex items-center justify-center rounded hover:bg-secondary"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="border w-8 h-8 flex items-center justify-center rounded hover:bg-secondary"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="border w-8 h-8 flex items-center justify-center rounded hover:bg-secondary"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="#" class="border w-8 h-8 flex items-center justify-center rounded hover:bg-secondary"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div
+            class="max-w-7xl px-6 mx-auto mt-8 flex flex-col md:items-center gap-4 text-gray-300 sm:flex-row sm:justify-around">
+            <div class="flex items-center gap-2">
+                <span class="text-lg"><i class="fa-solid fa-phone-volume"></i></span>
+                <span>929-301-6028</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-lg"><i class="fa-solid fa-envelope"></i></span>
+                <span>info@batc.com</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs md:text-lg "><i class="fa-solid fa-location-dot"></i></span>
+                <span>625W 57th St, New York, NY 10019</span>
+            </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="border-t border-gray-600 mt-8 pt-4 text-center text-gray-400 text-xs md:text-sm">
+            © 2025 BATC. All Rights Reserved. Designed & Developed by <span class="font-bold">Wyth Myth</span>
+        </div>
+    </footer>
+
+
+    <script>
+        // for navigation menu on mobile
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuClose = document.getElementById("menuClose");
+
+        // Open menu
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.remove("hidden");
+        });
+
+        // Close menu
+        menuClose.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+
+        // Click outside to close
+        mobileMenu.addEventListener("click", (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add("hidden");
+            }
+        });
+
+
+
+        // handle the multiple swiper js
+        // Dynamic swiper configuration
+        document.querySelectorAll('.mySwiper').forEach((swiperEl) => {
+            const breakpoints = swiperEl.dataset.breakpoints
+                ? JSON.parse(swiperEl.dataset.breakpoints)
+                : {};
+
+            new Swiper(swiperEl, {
+                loop: true,
+                spaceBetween: 20,
+                breakpoints: breakpoints,
+                pagination: {
+                    el: swiperEl.querySelector('.swiper-pagination'),
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: swiperEl.querySelector('.swiper-button-next-custom'),
+                    prevEl: swiperEl.querySelector('.swiper-button-prev-custom')
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>
