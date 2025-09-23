@@ -61,361 +61,261 @@ body {
 
 </head>
 
-<body class="bg-gray h-screen overoflow-hidden">
-    <header class="bg-primary h-28 px-5">
-        <div class="max-w-7xl mx-auto h-full flex justify-between items-center ">
-            <img class="w-24" src="../images/logo.png" alt="">
-            <div class="flex items-center gap-5">
+<body class="flex bg-gray-100 min-h-screen">
+    <!-- Toggle Button (Mobile only) -->
+    <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-20 p-2 bg-primary text-white rounded-lg">
+        ☰
+    </button>
+
+    <!-- Overlay -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-10"></div>
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="w-56 space-y-3 fixed top-0 left-0 h-full bg-white overflow-y-auto z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block sidebar-scrollbar">
+
+        <!-- Header with Logo + Close button -->
+        <div class="h-28 bg-primary flex items-center justify-between px-4">
+            <img class="w-20" src="../images/logo.png" alt="">
+            <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
+        </div>
+
+        <nav class="space-y-2">
+
+            <!-- Dashboard -->
+            <a href="index.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
+                <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
+                <span>Dashboard</span>
+            </a>
+
+            <!-- Profile -->
+            <a href="profile.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                <span>Profile</span>
+            </a>
+
+            <!-- Payment -->
+            <a href="payment.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
+                <span>Payment</span>
+            </a>
+
+            <!-- Tasks Dropdown -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-1">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                        <span>Tasks</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                    </a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- Main Area (Right side) -->
+    <div class="flex-1 md:ml-56 flex flex-col min-h-screen overflow-x-hidden">
+
+        <!-- Header -->
+        <header class="bg-primary h-28 px-5 ">
+            <div class="flex h-full  max-w-7xl mx-auto items-center justify-between gap-5">
+                <h2 class="text-white text-lg">Welcome, <br>
+                    <span class="text-3xl">Bin Yeamin</span>
+                </h2>
                 <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
                     <i class="text-white text-2xl fa-regular fa-bell"></i>
-                    <!-- notification badge -->
                     <span
-                        class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                        2
-                    </span>
+                        class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
                 </div>
             </div>
-        </div>
-    </header>
-
-    </head>
-
-    <div class="min-h-screen flex ">
-        <!-- Sidebar -->
-        <div id="sidebar" class=" h-screen w-56 py-4 space-y-3 md:block hidden fixed md:relative z-10 ">
-
-            <nav class="bg-white space-y-2 h-screen md:h-[80%] overflow-y-auto sidebar-scrollbar">
-
-                <!-- Dashboard -->
-                <a href="index.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
-                    <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
-                    <span>Dashboard</span>
-                </a>
-
-                <!-- Profile -->
-                <a href="profile.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
-                    <span>Profile</span>
-                </a>
-
-                <!-- Payment -->
-                <a href="payment.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
-                    <span>Payment</span>
-                </a>
-
-                <!-- Admin Approve -->
-                <a href="admin_approve.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/adminApproveIcon.png" alt="">
-                    <span>Admin Approve</span>
-                </a>
-
-                <!-- Staff -->
-                <a href="staff.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/staffIcon.png" alt="">
-                    <span>Staff</span>
-                </a>
-
-                <!-- Create Question -->
-                <a href="create_question.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/createQuestionIcon.png" alt="">
-                    <span>Create Question</span>
-                </a>
-
-                <!-- Create -->
-                <a href="create.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/createIcon.png" alt="">
-                    <span>Create</span>
-                </a>
-
-                <!-- Create Course -->
-                <a href="create_course.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/create_course.png" alt="">
-                    <span>Create Course</span>
-                </a>
-
-                <!-- Student List -->
-                <a href="students_list.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/StudentListIcon.png" alt="">
-                    <span>Student List</span>
-                </a>
-
-                <!-- Application List -->
-                <a href="application_list.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/applicationListIcon.png" alt="">
-                    <span>Application List</span>
-                </a>
-
-                <!-- File Upload -->
-                <a href="file_upload.html"
-                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                    <img class="mr-2 w-4" src="images/file_uploadIcon.png" alt="">
-                    <span>File Upload</span>
-                </a>
-
-                <!-- Tasks Dropdown -->
-                <div class="w-full">
-                    <button
-                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
-                        data-target="menu-1">
-                        <div class="flex items-center">
-                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
-                            <span>Tasks</span>
-                        </div>
-                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
-                        <a href="quiz_list(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
-                        </a>
-                        <a href="assignment(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
-                        </a>
-                        <a href="challenge(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/coddingChallengeGhostIcon.png" class="w-4 h-4 mr-2" alt=""> C-Challenge
-                        </a>
-                        <a href="exam(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/examGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Exam
-                        </a>
-                        <a href="bootcamp(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/bootcampGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Bootcamp
-                        </a>
-                        <a href="automation(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/automationGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Automation
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Materials Dropdown -->
-                <div class="w-full">
-                    <button
-                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
-                        data-target="menu-2">
-                        <div class="flex items-center">
-                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
-                            <span>Materials</span>
-                        </div>
-                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="menu-2" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
-                        <a href="class_notes(SU).html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/classNotes(SU)GhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Notes (SU)
-                        </a>
-                        <a href="class_schedule.html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/classScheduleGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Schedule
-                        </a>
-                        <a href="join_the_class.html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/joinTheClassGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Join The Class
-                        </a>
-                        <a href="class_recording.html"
-                            class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/classRecordingGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Recording
-                        </a>
-                        <a href="others.html" class="nav-item flex items-center py-1 transition-colors duration-300">
-                            <img src="images/referenceVideosGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Reference Videos
-                        </a>
-                    </div>
-                </div>
-
-            </nav>
-
-        </div>
-
-        <!-- Overlay for mobile -->
-        <div id="overlay" class="fixed inset-0 bg-transparent z-0 hidden md:hidden" onclick="toggleSidebar()"></div>
+        </header>
 
         <!-- Main content -->
-        <div class="flex-1 p-4 overflow-y-auto max-h-screen scrollbar-hide">
-            <!-- Mobile toggle button -->
-            <button onclick="toggleSidebar()" class="md:hidden mb-4 text-dark-gray bg-yellow px-4 py-2 rounded">☰
-            </button>
+        <main class="flex-1 p-4 overflow-y-auto overflow-x-hidden">
 
-            <!-- Dynamic Content -->
-            <div id="main-content ">
-                <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
-                    <!-- profile and payment info  -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div class="bg-white flex rounded-lg flex-col items-start ">
-                            <div class="bg-primary w-full rounded-t-lg">
-                                <h2 class="text-xl p-3 font-semibold text-white">Personal Information</h2>
-                            </div>
-                            <div class="grid grid-cols-12 justify-center w-full items-center gap-4 md:gap-8 p-5">
-                                <div class="col-span-12 md:col-span-4 mx-auto">
-                                    <img class="w-24 md:w-32 h-24 md:h-32 rounded-full object-cover"
-                                        src="images/profile.jpg" alt="">
-                                </div>
-                                <div class="col-span-12 md:col-span-8 spcace-y-5 flex flex-col">
-                                    <h6 class="text-sm md:text-lg">Full Name: Bin Yeamin</h6>
-                                    <hr class="border-b border-gray-200 mt-2">
-                                    <h6 class="text-sm md:text-lg ">Member ID: 007</h6>
-                                    <hr class="border-b border-gray-200 mt-2">
-                                    <h6 class="text-sm md:text-lg ">Phone: 929-301-6028</h6>
-                                    <hr class="border-b border-gray-200 mt-2">
-                                    <h6 class="text-sm md:text-lg ">Email: admin@gmail.com</h6>
-                                    <hr class="border-b border-gray-200 mt-2">
-                                </div>
-                            </div>
+            <!-- Profile and Monthly Deposit -->
+            <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Personal Information -->
+                    <div class="bg-white flex rounded-lg flex-col items-start">
+                        <div class="bg-primary w-full rounded-t-lg">
+                            <h2 class="text-xl p-3 font-semibold text-white">Personal Information</h2>
                         </div>
-
-                        <div class="bg-white flex rounded-lg flex-col items-start ">
-                            <div class="bg-primary w-full rounded-t-lg">
-                                <h2 class="text-xl p-3 font-semibold text-white">Monthly Deposit</h2>
+                        <div class="grid grid-cols-12 justify-center w-full items-center gap-4 md:gap-8 p-5">
+                            <div class="col-span-12 md:col-span-4 mx-auto">
+                                <img class="w-24 md:w-32 h-24 md:h-32 rounded-full object-cover"
+                                    src="images/profile.jpg" alt="">
                             </div>
-                            <div class="w-full p-5">
-                                <h6 class="text-sm md:text-lg flex justify-between">
-                                    <span>Jan - May</span>
-                                    <span>1850.00 $</span>
-                                </h6>
-                                <h6 class="text-sm md:text-lg flex justify-between">
-                                    <span>June:</span>
-                                    <span>540.00 $</span>
-                                </h6>
-                                <h6 class="text-sm md:text-lg flex justify-between">
-                                    <span>July:</span>
-                                    <span>700.00 $</span>
-                                </h6>
-                                <h6 class="text-sm md:text-lg flex justify-between">
-                                    <span>August:</span>
-                                    <span>450.00 $</span>
-                                </h6>
-                                <hr class="border-b border-gray-200 mt-2 mb-2">
-                                <h6 class="text-sm md:text-lg font-bold flex justify-between">
-                                    <span>Total Due:</span>
-                                    <span>2000.00 $</span>
-                                </h6>
+                            <div class="col-span-12 md:col-span-8 flex flex-col space-y-2">
+                                <h6 class="text-sm md:text-lg">Full Name: Bin Yeamin</h6>
+                                <hr class="border-b border-gray-200 mt-2">
+                                <h6 class="text-sm md:text-lg">Member ID: 007</h6>
+                                <hr class="border-b border-gray-200 mt-2">
+                                <h6 class="text-sm md:text-lg">Phone: 929-301-6028</h6>
+                                <hr class="border-b border-gray-200 mt-2">
+                                <h6 class="text-sm md:text-lg">Email: admin@gmail.com</h6>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- payment receipt  -->
-                    <div class="bg-white rounded-lg p-5">
-                        <h3 class="text-xl  font-semibold text-primary my-2">All Payment Receipt</h3>
-                        <div class="">
-                            <!--  -->
-                            <!-- Custom Buttons (outside swiper) -->
-                            <div class="flex justify-end my-5 gap-4 mt-4">
-                                <button
-                                    class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
-                                    <i class="text-xl fa-solid fa-arrow-left"></i>
-                                </button>
-                                <button
-                                    class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
-                                    <i class="text-xl fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-
-                            <!-- Example Slider 1 -->
-                            <!-- Swiper Container -->
-                            <div class="swiper mySwiper" data-slides="4"
-                                data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":2},"1024":{"slidesPerView":3},"1280":{"slidesPerView":4}}'>
-
-                                <div class="swiper-wrapper">
-
-                                    <!-- Slide 1 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 2 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 3 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 4 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 5 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 6 -->
-                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
-                                        <div class="bg-primary rounded-t-lg">
-                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                        </div>
-                                        <div>
-                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Pagination -->
-                                <div class="swiper-pagination"></div>
-                            </div>
-                            <!--  -->
+                    <!-- Monthly Deposit -->
+                    <div class="bg-white flex rounded-lg flex-col items-start">
+                        <div class="bg-primary w-full rounded-t-lg">
+                            <h2 class="text-xl p-3 font-semibold text-white">Monthly Deposit</h2>
                         </div>
+                        <div class="w-full p-5">
+                            <h6 class="text-sm md:text-lg flex justify-between"><span>Jan - May</span><span>1850.00
+                                    $</span></h6>
+                            <h6 class="text-sm md:text-lg flex justify-between"><span>June:</span><span>540.00 $</span>
+                            </h6>
+                            <h6 class="text-sm md:text-lg flex justify-between"><span>July:</span><span>700.00 $</span>
+                            </h6>
+                            <h6 class="text-sm md:text-lg flex justify-between"><span>August:</span><span>450.00
+                                    $</span></h6>
+                            <hr class="border-b border-gray-200 mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg font-bold flex justify-between"><span>Total
+                                    Due:</span><span>2000.00 $</span></h6>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Payment Receipts -->
+                <div class="bg-white rounded-lg p-5">
+                    <h3 class="text-xl font-semibold text-primary my-2">All Payment Receipt</h3>
 
+                    <!-- Swiper Navigation -->
+                    <div class="flex justify-end my-5 gap-4 mt-4">
+                        <button
+                            class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full"><i
+                                class="text-xl fa-solid fa-arrow-left"></i></button>
+                        <button
+                            class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full"><i
+                                class="text-xl fa-solid fa-arrow-right"></i></button>
+                    </div>
 
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper" data-slides="4"
+                        data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":2},"1024":{"slidesPerView":3},"1280":{"slidesPerView":4}}'>
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                <div class="bg-primary rounded-t-lg">
+                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                </div>
+                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                            </div>
+                            <!-- অন্যান্য slides copy করে এখানে রাখো -->
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
 
                 </div>
 
-
-
             </div>
-        </div>
+        </main>
+
     </div>
 
     <script>
+
+        // togle menu start 
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        const toggleBtn = document.getElementById("menu-toggle");
+        const closeBtn = document.getElementById("close-btn");
+
+        // ===== Open Sidebar =====
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+        });
+
+        // ===== Close Sidebar =====
+        function closeSidebar() {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        }
+
+        closeBtn.addEventListener("click", closeSidebar);
+        overlay.addEventListener("click", closeSidebar);
+
+        // ===== Accordions =====
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+        // ===== Resize Behaviour =====
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 786) {
+                sidebar.classList.remove("-translate-x-full");
+                overlay.classList.add("hidden");
+            } else {
+                sidebar.classList.add("-translate-x-full");
+            }
+        }); //toggle menu end
+
 
 
         // Handle multiple accordions dynamically
@@ -433,25 +333,6 @@ body {
 
 
 
-
-        const buttons = document.querySelectorAll('.toggle-btn');
-
-        buttons.forEach((button) => {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation();
-                resetButtons();
-                button.classList.remove('bg-gray-100', 'hover:bg-gray-100', 'text-black');
-                button.classList.add('bg-yellow', 'hover:bg-yellow', 'text-dark-gray');
-            });
-        });
-
-
-        function resetButtons() {
-            buttons.forEach((btn) => {
-                btn.classList.remove('bg-yellow', 'hover:bg-yellow', 'text-white');
-                btn.classList.add('bg-gray-100', 'hover:bg-gray-100', 'text-black');
-            });
-        }
 
 
 
@@ -518,25 +399,8 @@ body {
 
     </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
-</body>
+
 
 </html>

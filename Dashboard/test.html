@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn  -->
+    <script src="https://kit.fontawesome.com/25d8830708.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <style type="text/tailwindcss">
+        @theme {
+        /* --color-clifford: #da373d; */
+        --color-primary: #090D47;
+        --color-secondary: #FF6B6B;
+        --color-gray: #EDF1F3;
+      }
+
+
+
+       /* Custom scrollbar */
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 6px; /* scrollbar width */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* background of the track */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #090D47; /* primary color */
+    border-radius: 9999px; /* round edges */
+  }
+
+  /* Firefox scrollbar */
+  .sidebar-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #090D47 transparent;
+  }
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* optional: scrollbar track hide */
+}
+
+/* Firefox */
+body {
+    scrollbar-width: none;  /* hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+    </style>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>BATC</title>
+
+</head>
+
+<body class="bg-gray h-screen overoflow-hidden">
+
+    <div class="">
+        <!-- Sidebar -->
+        <div id="sidebar" class="  w-56 py-4 space-y-3 md:block hidden fixed md:relative z-10 ">
+
+            <nav class="bg-white space-y-2 h-screen md:h-[80%] overflow-y-auto sidebar-scrollbar">
+
+                <!-- Dashboard -->
+                <a href="index.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
+                    <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+                <!-- Profile -->
+                <a href="profile.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                    <span>Profile</span>
+                </a>
+
+                <!-- Payment -->
+                <a href="payment.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
+                    <span>Payment</span>
+                </a>
+
+                <!-- Admin Approve -->
+                <a href="admin_approve.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/adminApproveIcon.png" alt="">
+                    <span>Admin Approve</span>
+                </a>
+
+                <!-- Staff -->
+                <a href="staff.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/staffIcon.png" alt="">
+                    <span>Staff</span>
+                </a>
+
+                <!-- Create Question -->
+                <a href="create_question.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/createQuestionIcon.png" alt="">
+                    <span>Create Question</span>
+                </a>
+
+                <!-- Create -->
+                <a href="create.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/createIcon.png" alt="">
+                    <span>Create</span>
+                </a>
+
+                <!-- Create Course -->
+                <a href="create_course.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/create_course.png" alt="">
+                    <span>Create Course</span>
+                </a>
+
+                <!-- Student List -->
+                <a href="students_list.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/StudentListIcon.png" alt="">
+                    <span>Student List</span>
+                </a>
+
+                <!-- Application List -->
+                <a href="application_list.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/applicationListIcon.png" alt="">
+                    <span>Application List</span>
+                </a>
+
+                <!-- File Upload -->
+                <a href="file_upload.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/file_uploadIcon.png" alt="">
+                    <span>File Upload</span>
+                </a>
+
+                <!-- Tasks Dropdown -->
+                <div class="w-full">
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                        data-target="menu-1">
+                        <div class="flex items-center">
+                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                            <span>Tasks</span>
+                        </div>
+                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                        <a href="quiz_list(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                        </a>
+                        <a href="assignment(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                        </a>
+                        <a href="challenge(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/coddingChallengeGhostIcon.png" class="w-4 h-4 mr-2" alt=""> C-Challenge
+                        </a>
+                        <a href="exam(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/examGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Exam
+                        </a>
+                        <a href="bootcamp(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/bootcampGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Bootcamp
+                        </a>
+                        <a href="automation(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/automationGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Automation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Materials Dropdown -->
+                <div class="w-full">
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                        data-target="menu-2">
+                        <div class="flex items-center">
+                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                            <span>Materials</span>
+                        </div>
+                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="menu-2" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                        <a href="class_notes(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classNotes(SU)GhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Notes (SU)
+                        </a>
+                        <a href="class_schedule.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classScheduleGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Schedule
+                        </a>
+                        <a href="join_the_class.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/joinTheClassGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Join The Class
+                        </a>
+                        <a href="class_recording.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classRecordingGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Recording
+                        </a>
+                        <a href="others.html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/referenceVideosGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Reference Videos
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- nav end -->
+        <header class="bg-primary h-28 px-5">
+            <div class="max-w-7xl mx-auto h-full flex justify-between items-center ">
+                <img class="w-24" src="../images/logo.png" alt="">
+                <div class="flex items-center gap-5">
+                    <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
+                        <i class="text-white text-2xl fa-regular fa-bell"></i>
+                        <!-- notification badge -->
+                        <span
+                            class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                            2
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="min-h-screen flex ">
+
+
+            <!-- Overlay for mobile -->
+            <div id="overlay" class="fixed inset-0 bg-transparent z-0 hidden md:hidden" onclick="toggleSidebar()"></div>
+
+            <!-- Main content -->
+            <div class="flex-1 p-4 overflow-y-auto max-h-screen scrollbar-hide">
+                <!-- Mobile toggle button -->
+                <button onclick="toggleSidebar()" class="md:hidden mb-4 text-dark-gray bg-yellow px-4 py-2 rounded">☰
+                </button>
+
+                <!-- Dynamic Content -->
+                <div id="main-content ">
+                    <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
+                        <!-- profile and payment info  -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="bg-white flex rounded-lg flex-col items-start ">
+                                <div class="bg-primary w-full rounded-t-lg">
+                                    <h2 class="text-xl p-3 font-semibold text-white">Personal Information</h2>
+                                </div>
+                                <div class="grid grid-cols-12 justify-center w-full items-center gap-4 md:gap-8 p-5">
+                                    <div class="col-span-12 md:col-span-4 mx-auto">
+                                        <img class="w-24 md:w-32 h-24 md:h-32 rounded-full object-cover"
+                                            src="images/profile.jpg" alt="">
+                                    </div>
+                                    <div class="col-span-12 md:col-span-8 spcace-y-5 flex flex-col">
+                                        <h6 class="text-sm md:text-lg">Full Name: Bin Yeamin</h6>
+                                        <hr class="border-b border-gray-200 mt-2">
+                                        <h6 class="text-sm md:text-lg ">Member ID: 007</h6>
+                                        <hr class="border-b border-gray-200 mt-2">
+                                        <h6 class="text-sm md:text-lg ">Phone: 929-301-6028</h6>
+                                        <hr class="border-b border-gray-200 mt-2">
+                                        <h6 class="text-sm md:text-lg ">Email: admin@gmail.com</h6>
+                                        <hr class="border-b border-gray-200 mt-2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white flex rounded-lg flex-col items-start ">
+                                <div class="bg-primary w-full rounded-t-lg">
+                                    <h2 class="text-xl p-3 font-semibold text-white">Monthly Deposit</h2>
+                                </div>
+                                <div class="w-full p-5">
+                                    <h6 class="text-sm md:text-lg flex justify-between">
+                                        <span>Jan - May</span>
+                                        <span>1850.00 $</span>
+                                    </h6>
+                                    <h6 class="text-sm md:text-lg flex justify-between">
+                                        <span>June:</span>
+                                        <span>540.00 $</span>
+                                    </h6>
+                                    <h6 class="text-sm md:text-lg flex justify-between">
+                                        <span>July:</span>
+                                        <span>700.00 $</span>
+                                    </h6>
+                                    <h6 class="text-sm md:text-lg flex justify-between">
+                                        <span>August:</span>
+                                        <span>450.00 $</span>
+                                    </h6>
+                                    <hr class="border-b border-gray-200 mt-2 mb-2">
+                                    <h6 class="text-sm md:text-lg font-bold flex justify-between">
+                                        <span>Total Due:</span>
+                                        <span>2000.00 $</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- payment receipt  -->
+                        <div class="bg-white rounded-lg p-5">
+                            <h3 class="text-xl  font-semibold text-primary my-2">All Payment Receipt</h3>
+                            <div class="">
+                                <!--  -->
+                                <!-- Custom Buttons (outside swiper) -->
+                                <div class="flex justify-end my-5 gap-4 mt-4">
+                                    <button
+                                        class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                        <i class="text-xl fa-solid fa-arrow-left"></i>
+                                    </button>
+                                    <button
+                                        class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                        <i class="text-xl fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Example Slider 1 -->
+                                <!-- Swiper Container -->
+                                <div class="swiper mySwiper" data-slides="4"
+                                    data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":2},"1024":{"slidesPerView":3},"1280":{"slidesPerView":4}}'>
+
+                                    <div class="swiper-wrapper">
+
+                                        <!-- Slide 1 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 2 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 3 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 4 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 5 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 6 -->
+                                        <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                            <div class="bg-primary rounded-t-lg">
+                                                <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                            </div>
+                                            <div>
+                                                <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <!--  -->
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        // Handle multiple accordions dynamically
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                // Toggle menu
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+
+
+
+        const buttons = document.querySelectorAll('.toggle-btn');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                resetButtons();
+                button.classList.remove('bg-gray-100', 'hover:bg-gray-100', 'text-black');
+                button.classList.add('bg-yellow', 'hover:bg-yellow', 'text-dark-gray');
+            });
+        });
+
+
+        function resetButtons() {
+            buttons.forEach((btn) => {
+                btn.classList.remove('bg-yellow', 'hover:bg-yellow', 'text-white');
+                btn.classList.add('bg-gray-100', 'hover:bg-gray-100', 'text-black');
+            });
+        }
+
+
+
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+        }
+
+        // dashboard content
+
+        // Active link highlight
+        const navItems = document.querySelectorAll('.nav-item');
+        const currentPath = window.location.pathname.split('/').pop();
+
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+                item.classList.add('bg-primary', 'text-white');
+            } else {
+                item.classList.remove('bg-primary', 'text-white');
+            }
+        });
+
+
+
+        // swiper js
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".mySwiper").forEach((slider, i) => {
+                let slidesPerView = parseInt(slider.dataset.slides) || 1;
+
+                // HTML থেকে breakpoint config parse করো
+                let breakpoints = {};
+                if (slider.dataset.breakpoints) {
+                    try {
+                        breakpoints = JSON.parse(slider.dataset.breakpoints);
+                    } catch (e) {
+                        console.error("Invalid breakpoints JSON in data-breakpoints", e);
+                    }
+                }
+
+                // Swiper Instance
+                let swiper = new Swiper(slider, {
+                    slidesPerView: slidesPerView,
+                    spaceBetween: 20,
+                    loop: true,
+                    pagination: {
+                        el: slider.querySelector(".swiper-pagination"),
+                        clickable: true,
+                    },
+                    breakpoints: breakpoints, // 👈 HTML থেকে apply হলো
+                });
+
+                // যদি custom next/prev button থাকে
+                const nextBtn = document.querySelectorAll(".custom-next")[i];
+                const prevBtn = document.querySelectorAll(".custom-prev")[i];
+                if (nextBtn && prevBtn) {
+                    nextBtn.addEventListener("click", () => swiper.slideNext());
+                    prevBtn.addEventListener("click", () => swiper.slidePrev());
+                }
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
