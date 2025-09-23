@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn  -->
+    <script src="https://kit.fontawesome.com/25d8830708.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <style type="text/tailwindcss">
+        @theme {
+        /* --color-clifford: #da373d; */
+        --color-primary: #090D47;
+        --color-secondary: #FF6B6B;
+        --color-gray: #EDF1F3;
+      }
+
+
+
+       /* Custom scrollbar */
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 6px; /* scrollbar width */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* background of the track */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #090D47; /* primary color */
+    border-radius: 9999px; /* round edges */
+  }
+
+  /* Firefox scrollbar */
+  .sidebar-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #090D47 transparent;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Enthrall</title>
+
+</head>
+
+<body class="bg-gray h-screen">
+    <header class="bg-primary h-28  px-5">
+        <div class="max-w-7xl mx-auto h-full flex justify-between items-center ">
+            <img class="w-24" src="../images/logo.png" alt="">
+            <div class="flex items-center gap-5">
+                <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
+                    <i class="text-white text-2xl fa-regular fa-bell"></i>
+                    <!-- notification badge -->
+                    <span
+                        class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                        2
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    </head>
+
+    <div class="min-h-screen flex ">
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class=" h-screen w-56 py-4 space-y-3 md:block hidden fixed md:relative z-10 ">
+
+            <nav class="bg-white space-y-2 h-screen md:h-[80%] overflow-y-auto sidebar-scrollbar">
+
+                <!-- Dashboard -->
+                <a href="index.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
+                    <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
+                    <span>Dashboard</span>
+                </a>
+
+                <!-- Profile -->
+                <a href="profile.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                    <span>Profile</span>
+                </a>
+
+                <!-- Payment -->
+                <a href="payment.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
+                    <span>Payment</span>
+                </a>
+
+                <!-- Admin Approve -->
+                <a href="admin_approve.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/adminApproveIcon.png" alt="">
+                    <span>Admin Approve</span>
+                </a>
+
+                <!-- Staff -->
+                <a href="staff.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/staffIcon.png" alt="">
+                    <span>Staff</span>
+                </a>
+
+                <!-- Create Question -->
+                <a href="create_question.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/createQuestionIcon.png" alt="">
+                    <span>Create Question</span>
+                </a>
+
+                <!-- Create -->
+                <a href="create.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/createIcon.png" alt="">
+                    <span>Create</span>
+                </a>
+
+                <!-- Create Course -->
+                <a href="create_course.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/create_course.png" alt="">
+                    <span>Create Course</span>
+                </a>
+
+                <!-- Student List -->
+                <a href="students_list.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/StudentListIcon.png" alt="">
+                    <span>Student List</span>
+                </a>
+
+                <!-- Application List -->
+                <a href="application_list.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/applicationListIcon.png" alt="">
+                    <span>Application List</span>
+                </a>
+
+                <!-- File Upload -->
+                <a href="file_upload.html"
+                    class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                    <img class="mr-2 w-4" src="images/file_uploadIcon.png" alt="">
+                    <span>File Upload</span>
+                </a>
+
+                <!-- Tasks Dropdown -->
+                <div class="w-full">
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                        data-target="menu-1">
+                        <div class="flex items-center">
+                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                            <span>Tasks</span>
+                        </div>
+                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                        <a href="quiz_list(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                        </a>
+                        <a href="assignment(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                        </a>
+                        <a href="challenge(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/coddingChallengeGhostIcon.png" class="w-4 h-4 mr-2" alt=""> C-Challenge
+                        </a>
+                        <a href="exam(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/examGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Exam
+                        </a>
+                        <a href="bootcamp(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/bootcampGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Bootcamp
+                        </a>
+                        <a href="automation(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/automationGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Automation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Materials Dropdown -->
+                <div class="w-full">
+                    <button
+                        class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                        data-target="menu-2">
+                        <div class="flex items-center">
+                            <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                            <span>Materials</span>
+                        </div>
+                        <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="menu-2" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                        <a href="class_notes(SU).html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classNotes(SU)GhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Notes (SU)
+                        </a>
+                        <a href="class_schedule.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classScheduleGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Schedule
+                        </a>
+                        <a href="join_the_class.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/joinTheClassGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Join The Class
+                        </a>
+                        <a href="class_recording.html"
+                            class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/classRecordingGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Class Recording
+                        </a>
+                        <a href="others.html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                            <img src="images/referenceVideosGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Reference Videos
+                        </a>
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+
+        <!-- Overlay for mobile -->
+        <div id="overlay" class="fixed inset-0 bg-transparent z-0 hidden md:hidden" onclick="toggleSidebar()"></div>
+
+        <!-- Main content -->
+        <div class="flex-1 p-4 ">
+            <!-- Mobile toggle button -->
+            <button onclick="toggleSidebar()" class="md:hidden mb-4 text-dark-gray bg-yellow px-4 py-2 rounded">☰
+            </button>
+
+            <!-- Dynamic Content -->
+            <div id="main-content">
+                <div class="bg-white p-4 rounded-lg">
+                    <h1 class="text-3xl font-bold mb-4">Dashboard</h1>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+
+                        <!-- Mentors -->
+                        <div class="flex items-center p-4 bg-blue-50 border border-blue-300 rounded-lg">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full text-xl">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700 font-medium">Mentors</p>
+                                <p class="text-2xl font-bold text-blue-700">11</p>
+                            </div>
+                        </div>
+
+                        <!-- Applications -->
+                        <div class="flex items-center p-4 bg-green-50 border border-green-300 rounded-lg">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full text-xl">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-green-700 font-medium">Application</p>
+                                <p class="text-2xl font-bold text-green-700">581</p>
+                            </div>
+                        </div>
+
+                        <!-- Courses -->
+                        <div class="flex items-center p-4 bg-blue-50 border border-blue-300 rounded-lg">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full text-xl">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700 font-medium">Courses</p>
+                                <p class="text-2xl font-bold text-blue-700">10</p>
+                            </div>
+                        </div>
+
+                        <!-- Students -->
+                        <div class="flex items-center p-4 bg-green-50 border border-green-300 rounded-lg">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-green-500 text-white rounded-full text-xl">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-green-700 font-medium">Students</p>
+                                <p class="text-2xl font-bold text-green-700">489</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- classes  -->
+                <div class="  bg-white p-4 rounded-lg mt-5">
+
+                    <div class="p-4">
+                        <!-- Button Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Quiz</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Exam</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Homework</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Bootcamp</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Class
+                                Notes</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Class
+                                Video</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Set
+                                Up &amp; Others</button>
+                            <button
+                                class="bg-gray-100 py-3 rounded-lg text-xl font-medium hover:bg-gray-200 transition">Interview</button>
+                        </div>
+
+                        <!-- Honor Board -->
+                        <div class="mt-3">
+                            <button
+                                class="bg-yellow-400 hover:bg-yellow-500 py-3 w-full rounded-lg text-xl font-medium transition">
+                                Honor Board
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class=" space-y-6 w-full bg-white rounded-lg p-4">
+
+
+
+
+                        <div class="flex flex-col gap-1 w-4/12">
+                            <!-- Label -->
+                            <label for="batchLevel" class="font-medium text-gray-700">Batch </label>
+
+                            <!-- Select Box -->
+                            <select id="batchLevel"
+                                class="border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+                                <option value="">Select Batch Level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+
+
+
+
+
+
+                        <!-- show & search -->
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 my-10">
+                            <!-- Show entries dropdown -->
+                            <div class="flex flex-wrap items-center gap-2">
+                                <p>Show:</p>
+                                <div class="relative inline-block w-20">
+                                    <select
+                                        class="block w-full border border-gray-300 px-4 py-2 pr-10 rounded-md text-gray-700 focus:outline-none focus:ring-2 appearance-none bg-white">
+                                        <option>10</option>
+                                        <option>20</option>
+                                        <option>50</option>
+                                        <option>100</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p>entries</p>
+                            </div>
+
+                            <!-- Search box -->
+                            <div class="w-full md:w-auto flex">
+                                <input type="text" placeholder="Search here..."
+                                    class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-yellow-500" />
+                                <button
+                                    class="px-4 py-2 bg-black text-yellow font-semibold rounded-r-md focus:outline-none focus:ring-2">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto bg-white shadow rounded">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-yellow">
+                                    <tr>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">SL</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Name</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Student ID</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Quiz %</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">HW %</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Exam %</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Bootcamp %</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Coding
+                                            challenge %</th>
+                                        <th class=" px-2 py-3 text-left text-sm font-bold text-gray-700">Weighted Grade
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 text-sm">
+                                    <!-- Row 1 -->
+                                    <tr>
+                                        <td class="px-4 py-3 align-top">1</td>
+                                        <td class="px-4 py-3 align-top">Name</td>
+                                        <td class="px-4 py-3 align-top">00000000</td>
+                                        <td class="px-4 py-3 align-top">55%</td>
+                                        <td class="px-4 py-3 align-top">59%</td>
+                                        <td class="px-4 py-3 align-top">80%</td>
+                                        <td class="px-4 py-3 align-top">10%</td>
+                                        <td class="px-4 py-3 align-top">99%</td>
+                                        <td class="px-4 py-3 align-top">89%</td>
+                                    </tr>
+
+
+                                    <!-- Row 2 -->
+                                    <tr>
+                                        <td class="px-4 py-3 align-top">1</td>
+                                        <td class="px-4 py-3 align-top">Name</td>
+                                        <td class="px-4 py-3 align-top">00000000</td>
+                                        <td class="px-4 py-3 align-top">55%</td>
+                                        <td class="px-4 py-3 align-top">59%</td>
+                                        <td class="px-4 py-3 align-top">80%</td>
+                                        <td class="px-4 py-3 align-top">10%</td>
+                                        <td class="px-4 py-3 align-top">99%</td>
+                                        <td class="px-4 py-3 align-top">89%</td>
+                                    </tr>
+                                    <!-- Row 3 -->
+                                    <tr>
+                                        <td class="px-4 py-3 align-top">1</td>
+                                        <td class="px-4 py-3 align-top">Name</td>
+                                        <td class="px-4 py-3 align-top">00000000</td>
+                                        <td class="px-4 py-3 align-top">55%</td>
+                                        <td class="px-4 py-3 align-top">59%</td>
+                                        <td class="px-4 py-3 align-top">80%</td>
+                                        <td class="px-4 py-3 align-top">10%</td>
+                                        <td class="px-4 py-3 align-top">99%</td>
+                                        <td class="px-4 py-3 align-top">89%</td>
+                                    </tr>
+
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div
+                            class="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mt-4 gap-2">
+                            <p class="text-sm text-gray-500">Showing 01 of 20 Result</p>
+                            <div class="flex gap-2">
+                                <button class="px-2 py-1 border rounded">1</button>
+                                <button class="px-2 py-1 border rounded">2</button>
+                                <button class="px-2 py-1 border rounded">3</button>
+                                <button class="px-2 py-1 border rounded">Next →</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        // Handle multiple accordions dynamically
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                // Toggle menu
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+
+
+
+        const buttons = document.querySelectorAll('.toggle-btn');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                resetButtons();
+                button.classList.remove('bg-gray-100', 'hover:bg-gray-100', 'text-black');
+                button.classList.add('bg-yellow', 'hover:bg-yellow', 'text-dark-gray');
+            });
+        });
+
+
+        function resetButtons() {
+            buttons.forEach((btn) => {
+                btn.classList.remove('bg-yellow', 'hover:bg-yellow', 'text-white');
+                btn.classList.add('bg-gray-100', 'hover:bg-gray-100', 'text-black');
+            });
+        }
+
+
+
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+        }
+
+        // dashboard content
+
+        // Active link highlight
+        const navItems = document.querySelectorAll('.nav-item');
+        const currentPath = window.location.pathname.split('/').pop();
+
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+                item.classList.add('bg-primary', 'text-white');
+            } else {
+                item.classList.remove('bg-primary', 'text-white');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</body>
+
+</html>
