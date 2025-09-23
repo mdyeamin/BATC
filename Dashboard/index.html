@@ -50,8 +50,14 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
 }
     </style>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Enthrall</title>
+    <title>BATC</title>
 
 </head>
 
@@ -309,16 +315,96 @@ body {
                     <!-- payment receipt  -->
                     <div class="bg-white rounded-lg p-5">
                         <h3 class="text-xl  font-semibold text-primary my-2">All Payment Receipt</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-4">
-                            <div class="bg-white rounded-lg border border-primary">
-                                <div class="bg-primary rounded-t-lg">
-                                    <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
-                                </div>
-                                <div class="">
-                                    <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
-                                </div>
+                        <div class="">
+                            <!--  -->
+                            <!-- Custom Buttons (outside swiper) -->
+                            <div class="flex justify-end my-5 gap-4 mt-4">
+                                <button
+                                    class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                    <i class="text-xl fa-solid fa-arrow-left"></i>
+                                </button>
+                                <button
+                                    class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                    <i class="text-xl fa-solid fa-arrow-right"></i>
+                                </button>
                             </div>
+
+                            <!-- Example Slider 1 -->
+                            <!-- Swiper Container -->
+                            <div class="swiper mySwiper" data-slides="4"
+                                data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":2},"1024":{"slidesPerView":3},"1280":{"slidesPerView":4}}'>
+
+                                <div class="swiper-wrapper">
+
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 5 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 6 -->
+                                    <div class="swiper-slide bg-white rounded-lg border border-primary">
+                                        <div class="bg-primary rounded-t-lg">
+                                            <h6 class="text-white py-2 px-4">Ryan Taj - July</h6>
+                                        </div>
+                                        <div>
+                                            <img class="rounded-b-lg" src="images/payment_receipt.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <!--  -->
                         </div>
+
+
+
                     </div>
 
                 </div>
@@ -390,6 +476,46 @@ body {
                 item.classList.remove('bg-primary', 'text-white');
             }
         });
+
+
+
+        // swiper js
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".mySwiper").forEach((slider, i) => {
+                let slidesPerView = parseInt(slider.dataset.slides) || 1;
+
+                // HTML থেকে breakpoint config parse করো
+                let breakpoints = {};
+                if (slider.dataset.breakpoints) {
+                    try {
+                        breakpoints = JSON.parse(slider.dataset.breakpoints);
+                    } catch (e) {
+                        console.error("Invalid breakpoints JSON in data-breakpoints", e);
+                    }
+                }
+
+                // Swiper Instance
+                let swiper = new Swiper(slider, {
+                    slidesPerView: slidesPerView,
+                    spaceBetween: 20,
+                    loop: true,
+                    pagination: {
+                        el: slider.querySelector(".swiper-pagination"),
+                        clickable: true,
+                    },
+                    breakpoints: breakpoints, // 👈 HTML থেকে apply হলো
+                });
+
+                // যদি custom next/prev button থাকে
+                const nextBtn = document.querySelectorAll(".custom-next")[i];
+                const prevBtn = document.querySelectorAll(".custom-prev")[i];
+                if (nextBtn && prevBtn) {
+                    nextBtn.addEventListener("click", () => swiper.slideNext());
+                    prevBtn.addEventListener("click", () => swiper.slidePrev());
+                }
+            });
+        });
+
     </script>
 
 
