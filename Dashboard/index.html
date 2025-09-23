@@ -37,14 +37,26 @@
     scrollbar-width: thin;
     scrollbar-color: #090D47 transparent;
   }
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* optional: scrollbar track hide */
+}
+
+/* Firefox */
+body {
+    scrollbar-width: none;  /* hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+}
     </style>
     <link rel="stylesheet" href="style.css">
     <title>Enthrall</title>
 
 </head>
 
-<body class="bg-gray h-screen">
-    <header class="bg-primary h-28  px-5">
+<body class="bg-gray h-screen overoflow-hidden">
+    <header class="bg-primary h-28 px-5">
         <div class="max-w-7xl mx-auto h-full flex justify-between items-center ">
             <img class="w-24" src="../images/logo.png" alt="">
             <div class="flex items-center gap-5">
@@ -64,8 +76,7 @@
 
     <div class="min-h-screen flex ">
         <!-- Sidebar -->
-        <div id="sidebar"
-            class=" h-screen w-56 py-4 space-y-3 md:block hidden fixed md:relative z-10 ">
+        <div id="sidebar" class=" h-screen w-56 py-4 space-y-3 md:block hidden fixed md:relative z-10 ">
 
             <nav class="bg-white space-y-2 h-screen md:h-[80%] overflow-y-auto sidebar-scrollbar">
 
@@ -232,7 +243,7 @@
         <div id="overlay" class="fixed inset-0 bg-transparent z-0 hidden md:hidden" onclick="toggleSidebar()"></div>
 
         <!-- Main content -->
-        <div class="flex-1 p-4 ">
+        <div class="flex-1 p-4 overflow-y-auto max-h-screen scrollbar-hide">
             <!-- Mobile toggle button -->
             <button onclick="toggleSidebar()" class="md:hidden mb-4 text-dark-gray bg-yellow px-4 py-2 rounded">☰
             </button>
