@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn  -->
+    <script src="https://kit.fontawesome.com/25d8830708.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <style type="text/tailwindcss">
+        @theme {
+        /* --color-clifford: #da373d; */
+        --color-primary: #090D47;
+        --color-secondary: #FF6B6B;
+        --color-gray: #EDF1F3;
+        --color-border: #D9D9D9;
+        --color-own-red: #E01D1D;
+        --color-own-green: #46B669;
+      }
+
+
+
+       /* Custom scrollbar */
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 6px; /* scrollbar width */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* background of the track */
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #090D47; /* primary color */
+    border-radius: 9999px; /* round edges */
+  }
+
+  /* Firefox scrollbar */
+  .sidebar-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #090D47 transparent;
+  }
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* optional: scrollbar track hide */
+}
+
+/* Firefox */
+body {
+    scrollbar-width: none;  /* hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+    </style>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>BATC</title>
+
+</head>
+
+<body class="flex bg-gray-100 min-h-screen">
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="w-56 space-y-3 fixed top-0 left-0 h-full bg-white overflow-y-auto z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block sidebar-scrollbar">
+
+        <!-- Header with Logo + Close button -->
+        <div class="h-28 bg-primary flex items-center justify-between px-4">
+            <img class="w-20 mx-auto" src="../images/logo.png" alt="">
+            <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
+        </div>
+
+        <nav class="space-y-2">
+
+            <!-- Dashboard -->
+            <a href="index.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
+                <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
+                <span>Dashboard</span>
+            </a>
+
+            <!-- Profile -->
+            <a href="profile.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                <span>Profile</span>
+            </a>
+
+            <!-- Payment -->
+            <a href="payment.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
+                <span>Payment</span>
+            </a>
+
+            <!-- Tasks Dropdown -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-1">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                        <span>Tasks</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                    </a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-- Main Area (Right side) -->
+    <div class="flex-1 md:ml-56 flex flex-col min-h-screen overflow-x-hidden">
+
+        <!-- Header -->
+        <header class="fixed top-0 left-0 w-full bg-primary h-28 px-5 shadow-md z-10">
+            <div class="flex h-full max-w-7xl mx-auto items-center justify-between gap-5">
+                <div class="flex items-center ">
+                    <!-- Toggle Button (Mobile only) -->
+                    <button id="menu-toggle"
+                        class="md:hidden text-3xl z-40 text-white pr-4 active:scale-95 transition duration-300">
+                        ☰
+                    </button>
+
+                    <!-- Overlay -->
+                    <div id="overlay" class="hidden fixed inset-0 backdrop-blur-[1px] z-20"></div>
+
+                    <!-- Welcome text -->
+                    <h2 class="md:ml-56 text-white text-xs md:text-lg">
+                        Welcome, <br>
+                        <span class="md:text-3xl text-lg font-semibold">Bin Yeamin</span>
+                    </h2>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center shadow-md">
+                    <i class="text-white text-2xl fa-regular fa-bell"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-own-red text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Main content -->
+        <main class="flex-1 p-5 pt-32  overflow-y-auto overflow-x-hidden">
+
+            <!-- Profile and status -->
+            <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+
+                    <!-- Profile details -->
+                    <div class="bg-white flex rounded-lg flex-col items-start">
+                        <div class="bg-primary w-full flex items-center justify-between rounded-t-lg">
+                            <h2 class="text-xl p-3 font-semibold text-white">Profile Details</h2>
+                            <!-- icon  -->
+                            <div class=" flex p-3 itemc-center gap-2">
+                                <img class="w-6 h-6" src="images/download-outline.svg" alt="">
+                                <img class="w-6 h-6" src="images/edit-outline.svg" alt="">
+                                <img class="w-6 h-6" src="images/award-outline.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="w-full p-5">
+
+                            <h6 class="text-sm md:text-lg flex justify-between">
+                                <span>Full Name</span>
+                                <span>Bin Yeamin</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg flex justify-between">
+                                <span>Member ID</span>
+                                <span>MID - 007</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg flex justify-between">
+                                <span>Email</span>
+                                <span>admin@gmail.com</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg flex justify-between">
+                                <span>Phone Number</span>
+                                <span>929-301-6028</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg flex justify-between">
+                                <span>Address</span>
+                                <span>this is address</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg  flex justify-between">
+                                <span>Date Of Birth</span>
+                                <span>Not provided</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg  flex justify-between">
+                                <span>Emergency Contact</span>
+                                <span>Not provided</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg  flex justify-between">
+                                <span>Know Us</span>
+                                <span>Not provided</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                            <h6 class="text-sm md:text-lg  flex justify-between">
+                                <span>Signature</span>
+                                <span>Not provided</span>
+                            </h6>
+                            <hr class="border-b border-border mt-2 mb-2">
+                        </div>
+                    </div>
+
+                    <!-- status -->
+                    <div class="bg-white flex rounded-lg flex-col items-center p-5">
+
+                        <div class="w-full">
+                            <div class="py-16">
+                                <img class="w-24 md:w-38 mx-auto h-24 md:h-38 rounded-full object-cover"
+                                    src="images/profile.jpg" alt="">
+                            </div>
+
+
+                            <div class="flex items-center justify-between">
+                                <div class="">
+                                    <h2 class=" text-xl font-semibold text-primary">Total Balance: $ 400</h2>
+                                    <h2 class=" text-xl font-semibold text-primary">Total Investment: $ 500</h2>
+
+                                </div>
+                                <div class="bg-gray px-4 py-2 rounded-lg">
+                                    <h6 class="text-sm ">Status: <span
+                                            class="text-own-green font-semibold">Active</span></h6>
+                                    <!-- <h6 class="text-sm ">Status: <span class="text-own-red font-semibold">Inactive</span></h6> -->
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="">
+                                <h3 class="w-full bg-primary text-center text-white terxt-3xl py-3 rounded-lg my-5">MID
+                                    - 007</h3>
+                            </div>
+                            <!--  -->
+                            <div class=" flex items-center justify-center gap-3 flex-nowrap">
+                                <button class="bg-gray  px-6 py-2 rounded-lg transition duration-300">
+                                    Staff</button>
+                                <button class="bg-gray  px-6 py-2 rounded-lg transition duration-300">
+                                    Superuser</button>
+                                <button class="bg-gray  px-6 py-2 rounded-lg transition duration-300">
+                                    Investor</button>
+                                <button class="bg-gray  px-6 py-2 rounded-lg transition duration-300">
+                                    Financial</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Cards Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+
+                    <!-- System Agreements Card -->
+                    <div class="">
+                        <div class="flex items-center justify-between my-5 gap-4 mt-4">
+                            <h3 class="md:text-2xl   font-bold">System Agreements</h3>
+                        </div>
+                       
+                    </div>
+
+                    <div class="col-span-2">
+
+                        <!-- Custom Buttons (outside swiper) -->
+                        <div class="flex items-center justify-between my-5 gap-4 mt-4">
+                           <h3 class="md:text-2xl font-bold mb-2">System Agreements</h3>
+                            <div class="flex justify-end">
+                                <button
+                                class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                <i class="text-xl fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button
+                                class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                <i class="text-xl fa-solid fa-arrow-right"></i>
+                            </button>
+                            </div>
+                        </div>
+
+                        <!-- Example Slider 1 -->
+                        <div class="swiper mySwiper" data-slides="4"
+                        data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":1},"1024":{"slidesPerView":2},"1280":{"slidesPerView":2}}'>
+                            <div class="swiper-wrapper">
+                                
+                                <div class="swiper-slide">
+                                    <div class="bg-white shadow rounded-lg p-6 flex flex-col items-center text-center">
+                                        <h2 class="text-base font-bold mb-4">Upload Document</h2>
+
+                                        <p class="bg-gray-100 px-2 py-1  rounded ">
+                                            Upload File
+                                        </p>
+                                        <p class="text-sm text-gray-500 mt-2">Uploaded: May 27, 2025</p>
+                                        <button
+                                            class="bg-primary text-white mt-3 px-4 py-2 w-full rounded hover:bg-[#152cF52]">
+                                            <input type="file" id="file1" class="hidden" />
+                                            <label for="file1" class=" px-2 py-1  rounded cursor-pointer ">
+                                                Open Document
+                                            </label>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-white shadow rounded-lg p-6 flex flex-col items-center text-center">
+                                        <h2 class="text-base font-bold mb-4">Upload Document</h2>
+
+                                        <p class="bg-gray-100 px-2 py-1  rounded ">
+                                            Upload File
+                                        </p>
+                                        <p class="text-sm text-gray-500 mt-2">Uploaded: May 27, 2025</p>
+                                        <button
+                                            class="bg-primary text-white mt-3 px-4 py-2 w-full rounded hover:bg-[#152c52]">
+                                            <input type="file" id="file1" class="hidden" />
+                                            <label for="file1" class=" px-2 py-1  rounded cursor-pointer ">
+                                                Open Document
+                                            </label>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-white shadow rounded-lg p-6 flex flex-col items-center text-center">
+                                        <h2 class="text-base font-bold mb-4">Upload Document</h2>
+
+                                        <p class="bg-gray-100 px-2 py-1  rounded">
+                                            Upload File
+                                        </p>
+                                        <p class="text-sm text-gray-500 mt-2">Uploaded: May 27, 2025</p>
+                                        <button
+                                            class="bg-primary text-white mt-3 px-4 py-2 w-full rounded hover:bg-[#152c52]">
+                                            <input type="file" id="file1" class="hidden" />
+                                            <label for="file1" class=" px-2 py-1  rounded cursor-pointer ">
+                                                Open Document
+                                            </label>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- <div class="swiper-pagination"></div> -->
+
+                        </div>
+
+                        
+
+                    </div>
+
+                </div>
+
+                <footer class="bg-white p-5 rounded-lg">
+                    <div class="py-10">
+                        <hr class="border-b border-border mb-5">
+                        <h6 class="text-base text-center">© 2025 HFall Realty. All Rights Reserved. Designed & Developed
+                            by <span class="text-primary font-bold">Wyth Myth</span></h6>
+                    </div>
+                </footer>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+
+        // togle menu start 
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        const toggleBtn = document.getElementById("menu-toggle");
+        const closeBtn = document.getElementById("close-btn");
+
+        // ===== Open Sidebar =====
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+        });
+
+        // ===== Close Sidebar =====
+        function closeSidebar() {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        }
+
+        closeBtn.addEventListener("click", closeSidebar);
+        overlay.addEventListener("click", closeSidebar);
+
+        // ===== Accordions =====
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+        // ===== Resize Behaviour =====
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 786) {
+                sidebar.classList.remove("-translate-x-full");
+                overlay.classList.add("hidden");
+            } else {
+                sidebar.classList.add("-translate-x-full");
+            }
+        }); //toggle menu end
+
+        // Handle multiple accordions dynamically
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                // Toggle menu
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+
+
+
+        // Handle multiple accordions dynamically
+        document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-target");
+                const menu = document.getElementById(targetId);
+                const arrow = btn.querySelector(".accordion-arrow");
+
+                // Toggle menu
+                menu.classList.toggle("hidden");
+                arrow.classList.toggle("rotate-180");
+            });
+        });
+
+
+
+
+
+
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+        }
+
+        // dashboard content
+
+        // Active link highlight
+        const navItems = document.querySelectorAll('.nav-item');
+        const currentPath = window.location.pathname.split('/').pop();
+
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+                item.classList.add('bg-primary', 'text-white');
+            } else {
+                item.classList.remove('bg-primary', 'text-white');
+            }
+        });
+
+
+
+        // swiper js
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".mySwiper").forEach((slider, i) => {
+                let slidesPerView = parseInt(slider.dataset.slides) || 1;
+
+                // HTML থেকে breakpoint config parse করো
+                let breakpoints = {};
+                if (slider.dataset.breakpoints) {
+                    try {
+                        breakpoints = JSON.parse(slider.dataset.breakpoints);
+                    } catch (e) {
+                        console.error("Invalid breakpoints JSON in data-breakpoints", e);
+                    }
+                }
+
+                // Swiper Instance
+                let swiper = new Swiper(slider, {
+                    slidesPerView: slidesPerView,
+                    spaceBetween: 20,
+                    loop: true,
+                    pagination: {
+                        el: slider.querySelector(".swiper-pagination"),
+                        clickable: true,
+                    },
+                    breakpoints: breakpoints, // 👈 HTML থেকে apply হলো
+                });
+
+                // যদি custom next/prev button থাকে
+                const nextBtn = document.querySelectorAll(".custom-next")[i];
+                const prevBtn = document.querySelectorAll(".custom-prev")[i];
+                if (nextBtn && prevBtn) {
+                    nextBtn.addEventListener("click", () => swiper.slideNext());
+                    prevBtn.addEventListener("click", () => swiper.slidePrev());
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+
+
+</html>
