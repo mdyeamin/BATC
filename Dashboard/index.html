@@ -14,6 +14,8 @@
         --color-primary: #090D47;
         --color-secondary: #FF6B6B;
         --color-gray: #EDF1F3;
+        --color-border: #D9D9D9;
+        --color-own-red: #E01D1D;
       }
 
 
@@ -150,14 +152,14 @@ body {
                 <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center shadow-md">
                     <i class="text-white text-2xl fa-regular fa-bell"></i>
                     <span
-                        class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
+                        class="absolute -top-1 -right-1 bg-own-red text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
                 </div>
             </div>
         </header>
 
 
         <!-- Main content -->
-        <main class="flex-1 p-4 pt-32  overflow-y-auto overflow-x-hidden">
+        <main class="flex-1 p-5 pt-32  overflow-y-auto overflow-x-hidden">
 
             <!-- Profile and Monthly Deposit -->
             <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
@@ -175,11 +177,11 @@ body {
                             </div>
                             <div class="col-span-12 md:col-span-8 flex flex-col space-y-2">
                                 <h6 class="text-sm md:text-lg">Full Name: Bin Yeamin</h6>
-                                <hr class="border-b border-gray-200 mt-2">
+                                <hr class="border-b border-border mt-2">
                                 <h6 class="text-sm md:text-lg">Member ID: 007</h6>
-                                <hr class="border-b border-gray-200 mt-2">
+                                <hr class="border-b border-border mt-2">
                                 <h6 class="text-sm md:text-lg">Phone: 929-301-6028</h6>
-                                <hr class="border-b border-gray-200 mt-2">
+                                <hr class="border-b border-border mt-2">
                                 <h6 class="text-sm md:text-lg">Email: admin@gmail.com</h6>
                             </div>
                         </div>
@@ -191,15 +193,15 @@ body {
                             <h2 class="text-xl p-3 font-semibold text-white">Monthly Deposit</h2>
                         </div>
                         <div class="w-full p-5">
-                            <h6 class="text-sm md:text-lg flex justify-between"><span>Jan - May</span><span>1850.00
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>Jan - May</span><span>1850.00
                                     $</span></h6>
-                            <h6 class="text-sm md:text-lg flex justify-between"><span>June:</span><span>540.00 $</span>
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>June:</span><span>540.00 $</span>
                             </h6>
-                            <h6 class="text-sm md:text-lg flex justify-between"><span>July:</span><span>700.00 $</span>
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>July:</span><span>700.00 $</span>
                             </h6>
-                            <h6 class="text-sm md:text-lg flex justify-between"><span>August:</span><span>450.00
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>August:</span><span>450.00
                                     $</span></h6>
-                            <hr class="border-b border-gray-200 mt-2 mb-2">
+                            <hr class="border-b border-border mt-2 mb-2">
                             <h6 class="text-sm md:text-lg font-bold flex justify-between"><span>Total
                                     Due:</span><span>2000.00 $</span></h6>
                         </div>
@@ -271,9 +273,15 @@ body {
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-
                 </div>
 
+                <footer class="bg-white p-5 rounded-lg">
+                    <div class="py-10">
+                        <hr class="border-b border-border mb-5">
+                        <h6 class="text-base text-center">© 2025 HFall Realty. All Rights Reserved. Designed & Developed
+                            by <span class="text-primary font-bold">Wyth Myth</span></h6>
+                    </div>
+                </footer>
             </div>
         </main>
 
