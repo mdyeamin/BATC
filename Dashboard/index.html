@@ -62,21 +62,13 @@ body {
 </head>
 
 <body class="flex bg-gray-100 min-h-screen">
-    <!-- Toggle Button (Mobile only) -->
-    <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-20 p-2 bg-primary text-white rounded-lg">
-        ☰
-    </button>
-
-    <!-- Overlay -->
-    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-10"></div>
-    <!-- Sidebar -->
     <!-- Sidebar -->
     <div id="sidebar"
         class="w-56 space-y-3 fixed top-0 left-0 h-full bg-white overflow-y-auto z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block sidebar-scrollbar">
 
         <!-- Header with Logo + Close button -->
         <div class="h-28 bg-primary flex items-center justify-between px-4">
-            <img class="w-20" src="../images/logo.png" alt="">
+            <img class="w-20 mx-auto" src="../images/logo.png" alt="">
             <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
         </div>
 
@@ -136,10 +128,21 @@ body {
 
         <!-- Header -->
         <header class="bg-primary h-28 px-5 ">
+
             <div class="flex h-full  max-w-7xl mx-auto items-center justify-between gap-5">
-                <h2 class="text-white text-lg">Welcome, <br>
-                    <span class="text-3xl">Bin Yeamin</span>
-                </h2>
+                <div class="flex items-center">
+                    <!-- Toggle Button (Mobile only) -->
+                    <button id="menu-toggle" class="md:hidden text-4xl z-20  bg-primary text-white rounded-lg">
+                        ☰
+                    </button>
+                    <!-- Overlay -->
+                    <div id="overlay" class="hidden fixed inset-0 backdrop-blur-[1px] z-10"></div>
+
+
+                    <h2 class="text-white text-lg">Welcome, <br>
+                        <span class="text-3xl">Bin Yeamin</span>
+                    </h2>
+                </div>
                 <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
                     <i class="text-white text-2xl fa-regular fa-bell"></i>
                     <span
