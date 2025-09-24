@@ -127,23 +127,27 @@ body {
     <div class="flex-1 md:ml-56 flex flex-col min-h-screen overflow-x-hidden">
 
         <!-- Header -->
-        <header class="bg-primary h-28 px-5 ">
-
-            <div class="flex h-full  max-w-7xl mx-auto items-center justify-between gap-5">
-                <div class="flex items-center">
+        <header class="fixed top-0 left-0 w-full bg-primary h-28 px-5 shadow-md z-10">
+            <div class="flex h-full max-w-7xl mx-auto items-center justify-between gap-5">
+                <div class="flex items-center ">
                     <!-- Toggle Button (Mobile only) -->
-                    <button id="menu-toggle" class="md:hidden text-4xl z-20  bg-primary text-white rounded-lg">
+                    <button id="menu-toggle"
+                        class="md:hidden text-3xl z-40 text-white pr-4 active:scale-95 transition duration-300">
                         ☰
                     </button>
+
                     <!-- Overlay -->
-                    <div id="overlay" class="hidden fixed inset-0 backdrop-blur-[1px] z-10"></div>
+                    <div id="overlay" class="hidden fixed inset-0 backdrop-blur-[1px] z-20"></div>
 
-
-                    <h2 class="text-white text-lg">Welcome, <br>
-                        <span class="text-3xl">Bin Yeamin</span>
+                    <!-- Welcome text -->
+                    <h2 class="md:ml-56 text-white text-xs md:text-lg">
+                        Welcome, <br>
+                        <span class="md:text-3xl text-lg font-semibold">Bin Yeamin</span>
                     </h2>
                 </div>
-                <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
+
+                <!-- Notification bell -->
+                <div class="relative w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center shadow-md">
                     <i class="text-white text-2xl fa-regular fa-bell"></i>
                     <span
                         class="absolute -top-1 -right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
@@ -151,8 +155,9 @@ body {
             </div>
         </header>
 
+
         <!-- Main content -->
-        <main class="flex-1 p-4 overflow-y-auto overflow-x-hidden">
+        <main class="flex-1 p-4 pt-32  overflow-y-auto overflow-x-hidden">
 
             <!-- Profile and Monthly Deposit -->
             <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
