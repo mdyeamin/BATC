@@ -80,31 +80,39 @@ body {
             <a href="index.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
                 <img class="mr-2 w-4" src="images/dashboardIcon.png" alt="">
-                <span>Dashboard</span>
+                <span class="block max-w-[140px] truncate" title="Dashboard">Dashboard</span>
             </a>
 
             <!-- Profile -->
             <a href="profile.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
                 <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
-                <span>Profile</span>
+                <span class="block max-w-[140px] truncate" title="Profile">Profile</span>
             </a>
-
-            <!-- Payment -->
-            <a href="payment.html"
+            <!-- Members Info -->
+            <a href="profile.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
-                <span>Payment</span>
+                <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Members Info">Members Info</span>
+            </a>
+            <!-- All Members Overview  -->
+            <a href="profile.html"
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/profileIcon.png" alt="">
+                <span class="block max-w-[140px] truncate" title="All Members Overview">
+                    All Members Overview
+                </span>
             </a>
 
-            <!-- Tasks Dropdown -->
+
+            <!-- Finance Dropdown -->
             <div class="w-full">
                 <button
-                    class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
                     data-target="menu-1">
                     <div class="flex items-center">
                         <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
-                        <span>Tasks</span>
+                        <span class="truncate w-full" title="Finance">Finance</span>
                     </div>
                     <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
@@ -113,12 +121,60 @@ body {
                 </button>
                 <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
                     <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
-                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> 
+                        <span class="block max-w-[140px] truncate" title="All Members Payment">All Members Payment</span>
                     </a>
                     <a href="assignment(SU).html"
                         class="nav-item flex items-center py-1 transition-colors duration-300">
-                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> 
+                        <span class="block max-w-[140px] truncate" title="Pending Payments"> Pending Payments</span>
+                       
                     </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Expenses">Expenses</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> 
+                        <span class="block max-w-[140px] truncate" title="Return Expenses">Return Expenses</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Return Payments">Return Payments</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- Agreement Dropdown -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-2">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
+                        <span class="truncate w-full" title="Agreement">Agreement</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-2" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> 
+                        <span class="block max-w-[140px] truncate" title="Upload Agreement">Upload Agreement</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> 
+                        <span class="block max-w-[140px] truncate" title="User Agreement List"> User Agreement List</span>
+                       
+                    </a>
+                   
+
                 </div>
             </div>
 
@@ -195,9 +251,11 @@ body {
                         <div class="w-full p-5">
                             <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>Jan - May</span><span>1850.00
                                     $</span></h6>
-                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>June:</span><span>540.00 $</span>
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>June:</span><span>540.00
+                                    $</span>
                             </h6>
-                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>July:</span><span>700.00 $</span>
+                            <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>July:</span><span>700.00
+                                    $</span>
                             </h6>
                             <h6 class="text-sm md:text-lg mb-2 flex justify-between"><span>August:</span><span>450.00
                                     $</span></h6>
@@ -344,9 +402,6 @@ body {
                 arrow.classList.toggle("rotate-180");
             });
         });
-
-
-
 
         // Handle multiple accordions dynamically
         document.querySelectorAll(".accordion-btn").forEach(btn => {
