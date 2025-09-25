@@ -72,56 +72,209 @@ body {
         <!-- Header with Logo + Close button -->
         <div class="h-28 bg-primary flex items-center justify-between px-4">
             <img class="w-20 mx-auto" src="../images/logo.png" alt="">
-            <button id="close-btn" class="md:hidden top-0 text-white text-xl">✖</button>
+            <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
         </div>
 
-        <nav class="space-y-2">
+        <nav class="">
 
             <!-- Dashboard -->
             <a href="index.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300 bg-primary text-white">
-                <img class="mr-2 w-4" src="images/dashboard.svg" alt="">
-                <span>Dashboard</span>
+                <img class="mr-2 w-4" src="images/dashboard_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Dashboard">Dashboard</span>
             </a>
 
             <!-- Profile -->
             <a href="profile.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                <img class="mr-2 w-4" src="images/profile.svg" alt="">
-                <span>Profile</span>
+                <img class="mr-2 w-4" src="images/profile_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Profile">Profile</span>
             </a>
-
-            <!-- Payment -->
-            <a href="payment.html"
+            <!-- Members Info -->
+            <a href="members_info.html"
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
-                <img class="mr-2 w-4" src="images/paymentIcon.png" alt="">
-                <span>Payment</span>
+                <img class="mr-2 w-4" src="images/members_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Members Info">Members Info</span>
+            </a>
+            <!-- All Members Overview  -->
+            <a href=""
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/all_members_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="All Members Overview">
+                    All Members Overview
+                </span>
             </a>
 
-            <!-- Tasks Dropdown -->
+
+            <!-- Finance Dropdown -->
             <div class="w-full">
                 <button
-                    class="accordion-btn flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
                     data-target="menu-1">
                     <div class="flex items-center">
-                        <img class="mr-2 w-4" src="images/tasksIcon.png" alt="">
-                        <span>Tasks</span>
+                        <img class="mr-2 w-4" src="images/finance_ico.png" alt="">
+                        <span class="truncate w-full" title="Finance">Finance</span>
                     </div>
                     <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-                <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                <div id="menu-1" class="accordion-menu hidden pl-10 mt-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center p-3 transition-colors duration-300">
+                        <img src="images/all_members_payment_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="All Members Payment">All Members
+                            Payment</span>
+                    </a>
+                    <a href="assignment(SU).html" class="nav-item flex items-center p-3 transition-colors duration-300">
+                        <img src="images/pending_payments_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Pending Payments"> Pending Payments</span>
+
+                    </a>
+                    <a href="assignment(SU).html" class="nav-item flex items-center p-3 transition-colors duration-300">
+                        <img src="images/expenses_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Expenses">Expenses</span>
+                    </a>
+                    <a href="assignment(SU).html" class="nav-item flex items-center p-3 transition-colors duration-300">
+                        <img src="images/return_expenses_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Return Expenses">Return Expenses</span>
+                    </a>
+                    <a href="assignment(SU).html" class="nav-item flex items-center p-3 transition-colors duration-300">
+                        <img src="images/return_payments_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Return Payments">Return Payments</span>
+                    </a>
+
+                </div>
+            </div>
+            <!-- Agreement Dropdown -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-2">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/agreement_ico.png" alt="">
+                        <span class="truncate w-full" title="Agreement">Agreement</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-2" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
                     <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
-                        <img src="images/quizGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Quiz
+                        <img src="images/upload_agreement_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Upload Agreement">Upload Agreement</span>
                     </a>
                     <a href="assignment(SU).html"
                         class="nav-item flex items-center py-1 transition-colors duration-300">
-                        <img src="images/assignmentGhostIcon.png" class="w-4 h-4 mr-2" alt=""> Assignment
+                        <img src="images/user_agreement_list_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="User Agreement List"> User Agreement
+                            List</span>
+
+                    </a>
+
+
+                </div>
+            </div>
+            <!-- Meeting Options -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-3">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/meeting_options_ico.png" alt="">
+                        <span class="truncate w-full" title="Meeting Options">Meeting Options</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-3" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/meeting_schedule_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Meeting Schedule">Meeting Schedule</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/view_calendar_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="View Calendar"> View Calendar</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/meeting_recording_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Meeting Recording"> Meeting Recording</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/meeting_upload_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Meeting Upload"> Meeting Upload</span>
                     </a>
                 </div>
             </div>
+
+            <!-- Create Announcement  -->
+            <a href=""
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/create_announcement_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Create Announcement">
+                    Create Announcement
+                </span>
+            </a>
+
+            <!-- Story of BATC -->
+            <div class="w-full">
+                <button
+                    class="accordion-btn cursor-pointer flex items-center justify-between w-full px-6 py-3 font-medium text-black transition-colors duration-300"
+                    data-target="menu-4">
+                    <div class="flex items-center">
+                        <img class="mr-2 w-4" src="images/story_of_BATC_ico.png" alt="">
+                        <span class="truncate w-full" title="Story of BATC">Story of BATC</span>
+                    </div>
+                    <svg class="accordion-arrow w-4 h-4 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="menu-4" class="accordion-menu hidden pl-10 mt-1 space-y-1 text-sm">
+                    <a href="quiz_list(SU).html" class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/add-Video_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Add Video">Add Video</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/success_story_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Success Story"> Success Story</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/events_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Events"> Events</span>
+                    </a>
+                    <a href="assignment(SU).html"
+                        class="nav-item flex items-center py-1 transition-colors duration-300">
+                        <img src="images/gallery_ico.png" class="w-4 h-4 mr-2" alt="">
+                        <span class="block max-w-[140px] truncate" title="Gallery"> Gallery</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Us  -->
+            <a href=""
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/contact_us_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Contact Us">
+                    Contact Us
+                </span>
+            </a>
+            <!-- Contact Wyth Myth  -->
+            <a href=""
+                class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
+                <img class="mr-2 w-4" src="images/contact_Wyth_Myth_ico.png" alt="">
+                <span class="block max-w-[140px] truncate" title="Contact Wyth Myth">
+                    Contact Wyth Myth
+                </span>
+            </a>
 
         </nav>
     </div>
@@ -163,8 +316,8 @@ body {
         <main class="flex-1 p-5 pt-32  overflow-y-auto overflow-x-hidden">
 
             <div class="space-y-5 max-w-7xl mx-auto rounded-lg">
-                
-                 <!-- content -->
+
+                <!-- content -->
                 <div class="bg-white rounded-xl shadow p-5 mt-5 mx-4">
                     <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-4">
                         <h2 class="text-2xl font-bold">All Member List</h2>
