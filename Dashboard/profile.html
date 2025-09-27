@@ -68,15 +68,15 @@ body {
 <body class="flex bg-gray-100 min-h-screen">
     <!-- Sidebar -->
     <div id="sidebar"
-        class="w-56 space-y-3 fixed top-0 left-0 h-full bg-white overflow-y-auto z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block sidebar-scrollbar">
+        class="w-56 fixed top-0 left-0 h-full bg-white z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block">
 
-        <!-- Header with Logo + Close button -->
+        <!-- Header with Logo + Close button (Fixed / Non-scrollable) -->
         <div class="h-28 bg-primary flex items-center justify-between px-4">
             <img class="w-20 mx-auto" src="../images/logo.png" alt="">
-            <button id="close-btn" class="md:hidden top-0 text-white text-xl">✖</button>
+            <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
         </div>
 
-        <nav class="">
+        <nav class="h-[calc(100%-7rem)] overflow-y-auto sidebar-scrollbar pt-5">
 
             <!-- Dashboard -->
             <a href="index.html"
@@ -265,7 +265,7 @@ body {
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
                 <img class="mr-2 w-4" src="images/contact_us_ico.png" alt="">
                 <span class="block max-w-[140px] truncate" title="Contact Us">
-                   Contact Us
+                    Contact Us
                 </span>
             </a>
             <!-- Contact Wyth Myth  -->
@@ -273,7 +273,7 @@ body {
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
                 <img class="mr-2 w-4" src="images/contact_Wyth_Myth_ico.png" alt="">
                 <span class="block max-w-[140px] truncate" title="Contact Wyth Myth">
-                   Contact Wyth Myth
+                    Contact Wyth Myth
                 </span>
             </a>
 
@@ -388,15 +388,16 @@ body {
 
                         <div class="w-full">
                             <div class="py-4 md:py-8">
-                                <img class=" w-44 mx-auto  h-44 rounded-full object-cover"
-                                    src="images/profile.jpg" alt="">
+                                <img class=" w-44 mx-auto  h-44 rounded-full object-cover" src="images/profile.jpg"
+                                    alt="">
                             </div>
 
 
                             <div class="flex items-center justify-between">
                                 <div class="">
                                     <h2 class="text-sm md:text-xl font-semibold text-primary">Total Balance: $ 400</h2>
-                                    <h2 class="text-sm md:text-xl font-semibold text-primary">Total Investment: $ 500</h2>
+                                    <h2 class="text-sm md:text-xl font-semibold text-primary">Total Investment: $ 500
+                                    </h2>
 
                                 </div>
                                 <div class="bg-gray px-4 py-2 rounded-lg">
@@ -412,13 +413,17 @@ body {
                             </div>
                             <!--  -->
                             <div class=" flex items-center justify-between gap-3 flex-nowrap">
-                                <button class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
+                                <button
+                                    class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
                                     Staff</button>
-                                <button class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
+                                <button
+                                    class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
                                     Superuser</button>
-                                <button class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
+                                <button
+                                    class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
                                     Investor</button>
-                                <button class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
+                                <button
+                                    class="bg-gray md:text-base font-semibold text-sm md:px-6 md:py-2 px-2 py-1  rounded-lg">
                                     Financial</button>
                             </div>
 
@@ -435,31 +440,31 @@ body {
                         <div class="flex items-center justify-between my-5 gap-4 mt-4">
                             <h3 class="md:text-2xl   font-bold">System Agreements</h3>
                         </div>
-                       
+
                     </div>
 
                     <div class="col-span-2">
 
                         <!-- Custom Buttons (outside swiper) -->
                         <div class="flex items-center justify-between my-5 gap-4 mt-4">
-                           <h3 class="md:text-2xl font-bold mb-2">System Agreements</h3>
+                            <h3 class="md:text-2xl font-bold mb-2">System Agreements</h3>
                             <div class="flex justify-end gap-4">
                                 <button
-                                class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
-                                <i class="text-xl fa-solid fa-arrow-left"></i>
-                            </button>
-                            <button
-                                class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
-                                <i class="text-xl fa-solid fa-arrow-right"></i>
-                            </button>
+                                    class="custom-prev flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                    <i class="text-xl fa-solid fa-arrow-left"></i>
+                                </button>
+                                <button
+                                    class="custom-next flex items-center justify-center w-10 h-10 bg-white shadow text-black px-4 py-2 rounded-full">
+                                    <i class="text-xl fa-solid fa-arrow-right"></i>
+                                </button>
                             </div>
                         </div>
 
                         <!-- Example Slider 1 -->
                         <div class="swiper mySwiper" data-slides="4"
-                        data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":1},"1024":{"slidesPerView":2},"1280":{"slidesPerView":2}}'>
+                            data-breakpoints='{"320":{"slidesPerView":1},"640":{"slidesPerView":1},"1024":{"slidesPerView":2},"1280":{"slidesPerView":2}}'>
                             <div class="swiper-wrapper">
-                                
+
                                 <div class="swiper-slide">
                                     <div class="bg-white shadow rounded-lg p-6 flex flex-col items-center text-center">
                                         <h2 class="text-base font-bold mb-4">Upload Document</h2>
@@ -517,7 +522,7 @@ body {
 
                         </div>
 
-                        
+
 
                     </div>
 

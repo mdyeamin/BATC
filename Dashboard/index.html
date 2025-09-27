@@ -68,15 +68,15 @@ body {
 <body class="flex bg-gray-100 min-h-screen">
     <!-- Sidebar -->
     <div id="sidebar"
-        class="w-56 space-y-3 fixed top-0 left-0 h-full bg-white overflow-y-auto z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block sidebar-scrollbar">
+        class="w-56 fixed top-0 left-0 h-full bg-white z-30 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:block">
 
-        <!-- Header with Logo + Close button -->
+        <!-- Header with Logo + Close button (Fixed / Non-scrollable) -->
         <div class="h-28 bg-primary flex items-center justify-between px-4">
             <img class="w-20 mx-auto" src="../images/logo.png" alt="">
             <button id="close-btn" class="md:hidden text-white text-xl">✖</button>
         </div>
 
-        <nav class="">
+        <nav class="h-[calc(100%-7rem)] overflow-y-auto sidebar-scrollbar pt-5">
 
             <!-- Dashboard -->
             <a href="index.html"
@@ -265,7 +265,7 @@ body {
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
                 <img class="mr-2 w-4" src="images/contact_us_ico.png" alt="">
                 <span class="block max-w-[140px] truncate" title="Contact Us">
-                   Contact Us
+                    Contact Us
                 </span>
             </a>
             <!-- Contact Wyth Myth  -->
@@ -273,7 +273,7 @@ body {
                 class="nav-item flex items-center px-6 py-3 font-medium text-black transition-colors duration-300">
                 <img class="mr-2 w-4" src="images/contact_Wyth_Myth_ico.png" alt="">
                 <span class="block max-w-[140px] truncate" title="Contact Wyth Myth">
-                   Contact Wyth Myth
+                    Contact Wyth Myth
                 </span>
             </a>
 
